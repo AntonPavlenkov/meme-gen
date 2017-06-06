@@ -493,16 +493,45 @@ fieldset {
 
 /* Components */
 header {
-<<<<<<< HEAD
-  height: 63px;
+  height: 3.9375rem;
   width: var(--container-width);
-=======
-  height: 3.9375em;
   background-color: var(--header-color);
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: center;
+  align-content: center; }
+
+nav {
+  font-family: Lato-Bold;
+  color: #ffffff;
+  text-transform: uppercase;
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
-  align-content: center; }
+  align-content: center;
+  font-size: 0.4375em; }
+  nav a {
+    margin: 0 2.3125rem;
+    align-self: center; }
+    nav a:hover {
+      color: var(--font-selected); }
+
+.arrow {
+  margin-top: 10px;
+  display: flex;
+  width: 4rem;
+  height: 3.4375rem;
+  background-image: url("../assets/logo.png");
+  background-size: 4rem; }
+
+.thong {
+  margin-top: 23px;
+  position: absolute;
+  background-color: #292929;
+  width: 64px;
+  height: 65px;
+  transform: rotate(-45deg);
+  z-index: -1; }
 
 .about {
   height: 3.9375em;
@@ -514,7 +543,6 @@ header {
 
 .about {
   height: 3.9375em;
->>>>>>> b7dc3a69324b47af08c066e8f1dac3871f57e894
   background-color: var(--header-color);
   display: flex;
   flex-flow: wrap row;
