@@ -1,16 +1,22 @@
-$container-width: 1063px;
+$container-width: 1020px;
 $mobile-breakpoint: 642px;
 
 :root {
   /* Layout */
   --container-width: $container-width;
-  --inner-container-width: 900px;
+  --inner-container-width: 820px;
   /* Fonts */
-  --primary-font: Playfair;
-  --secondary-font: Ubuntu;
+  --primary-font: Lato;
+  --secondary-font: Maven;
   /* Colors */
-  --main-color: #626262;
-  --sections-bg: #f0f0f0;
+  --header-color: #323232;
+  --font-selected: #2eb398;
+  --about-font-color: #d7fcf5;
+  --about-lines-color: #219d84;
+  --secondary-font: #20816d;
+  --lines-color: #e4e9eb;
+  --footer-color: #222222;
+  --footer-text-color: #454545;
 }
 
 
