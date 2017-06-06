@@ -492,7 +492,7 @@ fieldset {
   margin: 0; }
 
 /* Components */
-header {
+.header {
   height: 3.9375rem;
   width: var(--container-width);
   background-color: var(--header-color);
@@ -501,7 +501,7 @@ header {
   justify-content: center;
   align-content: center; }
 
-nav {
+.nav {
   font-family: Lato-Bold;
   color: #ffffff;
   text-transform: uppercase;
@@ -510,10 +510,10 @@ nav {
   justify-content: center;
   align-content: center;
   font-size: 0.4375em; }
-  nav a {
+  .nav a {
     margin: 0 2.3125rem;
     align-self: center; }
-    nav a:hover {
+    .nav a:hover {
       color: var(--font-selected); }
 
 .arrow {
@@ -560,30 +560,3 @@ nav {
   background-color: lightblue;
   height: 20px;
   width: 20px; }
-
-/*
- * ==== hexagon
- */
-.hexa, .hexa div {
-  margin: 0 auto;
-  transform-origin: 50% 50%;
-  overflow: hidden;
-  width: 300px;
-  height: 300px; }
-
-.hexa {
-  width: 325px;
-  height: 230px; }
-
-.hexa div {
-  width: 100%;
-  height: 100%; }
-
-.hexa {
-  transform: rotate(120deg); }
-
-.hex1 {
-  transform: rotate(-60deg); }
-
-.hex2 {
-  transform: rotate(-60deg); }
