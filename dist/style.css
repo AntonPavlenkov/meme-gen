@@ -493,8 +493,28 @@ fieldset {
 
 /* Components */
 header {
+<<<<<<< HEAD
   height: 63px;
   width: var(--container-width);
+=======
+  height: 3.9375em;
+  background-color: var(--header-color);
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-content: center; }
+
+.about {
+  height: 3.9375em;
+  background-color: var(--header-color);
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-content: center; }
+
+.about {
+  height: 3.9375em;
+>>>>>>> b7dc3a69324b47af08c066e8f1dac3871f57e894
   background-color: var(--header-color);
   display: flex;
   flex-flow: wrap row;
