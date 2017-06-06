@@ -1,43 +1,54 @@
 .get-in-touch {
 
-    padding: 0 50px;
+    padding:  65px  120px;
     display: inline-flex;
-    height: em(341px);
+    height: em(564px);
      width:  var(--container-width) ;
     background-color: var(--header-color);
     flex-flow: nowrap column;
-    align-items: center;
+    align-items: flex-start;
     justify-content:  center;
 
 
    h1 {
         font-size: 30PX;
          margin: 1px 3px 1px 10px;
-         color: var(--about-font-color);
+           color: #bfbfbf;
     } 
-      h2 {
-          font-size: 18PX;
-         margin: 1px 3px 1px 10px;
-         color: var(--about-font-color);
-    }
-    }
-     
-li, ul {
-      list-style: none;
-}
 
+     h2 {
+          font-size: 18PX;
+         margin: 1px 3px 6px 10px;
+         color: #bfbfbf;
+    }
+
+    form {
+        display: flex;
+         flex-flow: nowrap column;
+    }
+ }
+     
 
 input , textarea {
-    // width: 100%;
-    // padding: 12px 20px;
-    // margin: 8px 0;
-    // box-sizing: border-box;
-    // border: none;
+     margin: 8px 0;
+     box-sizing: border-box;
+    font-size: 12px;
     background-color: #454545;
     color: white;
     border: none;
+    width: 580px;
+    height: 38px;
 }
 
 .submit-button {
-    background-color: 
+    margin-top: 10px;
+    background-color: var(--font-selected);
+    width: 90px;
+    align-self: flex-end;
+}
+
+textarea {
+   height:  150px;
+    overflow-y: scroll;
+    resize: none;
 }

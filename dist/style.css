@@ -537,7 +537,7 @@ fieldset {
   padding: 0 50px;
   display: inline-flex;
   height: 21.3125em;
-  width: calc( var(--container-width) /2);
+  max-width: calc( var(--container-width) /2);
   background-color: var(--font-selected);
   flex-flow: nowrap row;
   align-items: center;
@@ -570,6 +570,7 @@ fieldset {
 
 .icons {
   display: flex;
+  align-self: flex-end;
   width: 100px; }
   .icons img {
     width: 25px;
@@ -661,27 +662,43 @@ fieldset {
     background-color: blue; }
 
 .get-in-touch {
-  padding: 0 50px;
+  padding: 65px  120px;
   display: inline-flex;
-  height: 21.3125em;
+  height: 35.25em;
   width: var(--container-width);
   background-color: var(--header-color);
   flex-flow: nowrap column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center; }
   .get-in-touch h1 {
     font-size: 30PX;
     margin: 1px 3px 1px 10px;
-    color: var(--about-font-color); }
+    color: #bfbfbf; }
   .get-in-touch h2 {
     font-size: 18PX;
-    margin: 1px 3px 1px 10px;
-    color: var(--about-font-color); }
-
-li, ul {
-  list-style: none; }
+    margin: 1px 3px 6px 10px;
+    color: #bfbfbf; }
+  .get-in-touch form {
+    display: flex;
+    flex-flow: nowrap column; }
 
 input, textarea {
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 12px;
   background-color: #454545;
   color: white;
-  border: none; }
+  border: none;
+  width: 580px;
+  height: 38px; }
+
+.submit-button {
+  margin-top: 10px;
+  background-color: var(--font-selected);
+  width: 90px;
+  align-self: flex-end; }
+
+textarea {
+  height: 150px;
+  overflow-y: scroll;
+  resize: none; }

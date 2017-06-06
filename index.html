@@ -58,7 +58,7 @@
     <section class="gallery">
     </section>
     <section class="about-container">
-      <section class="about">
+      <section class="about left-about">
 
         <img src="http://farm3.staticflickr.com/2788/4392569951_8bcec3b3ed_z.jpg?zz=1" alt="" width="200" height="197" />
         <div class="about-content">
@@ -78,7 +78,7 @@
         </div>
       </section>
 
-      <section class="about">
+      <section class="about right-about">
         <hr class="limit">
         <img src="http://farm3.staticflickr.com/2788/4392569951_8bcec3b3ed_z.jpg?zz=1" alt="" width="200" height="197" />
 
@@ -107,27 +107,19 @@
       <h2> In order to get in touch use the contact form below:</h2>
 
 
-      <form>
-        <ul class="form-style-1">
-          <li><span class="required">*</span><input type="text" name="field1" class="field-divided" placeholder="First" />&nbsp;<input
-              type="text" name="field2" class="field-divided" placeholder="Last" /></li>
-          <li>
-            <span class="required">*</span>
-            <input type="email" name="field3" class="field-long" placeholder="Email (Required)" />
-          </li>
-          <li>
+      <form class="msg-send"> 
+     
+        <span class="required"></span><input type="text" name="field1" class="field-divided" placeholder="Name (Required)" />
 
-            <span class="required">*</span>
-            <input type="email" name="field3" class="field-long" placeholder="Subject" />
-          </li>
-          <li>
-            <span class="required">*</span>
-            <textarea name="field5" id="field5" class="field-long field-textarea"></textarea>
-          </li>
-          <li>
-            <input  class ="submit-button" type="submit" value="Submit" />
-          </li>
-        </ul>
+            <span class="required"></span>
+            <input type="email" name="field3" class="field-long" placeholder="Email (Required)" />
+             
+            <span class="required"></span>
+            <input text="email" name="field3" class="field-long" placeholder="Subject" />   
+          
+            <textarea name="field5" id="field5" class="field-long field-textarea" placeholder="Write your message here..."></textarea>
+      
+            <input  class ="submit-button" type="submit" value="Submit" />       
       </form>
 
 
@@ -138,6 +130,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
 </body>
 
 </html>
