@@ -1,8 +1,39 @@
 .about {
-    height: em(63px);
-    background-color: var(--header-color);
+    height: em(341px);
+     width: var(--container-width);
+    background-color: var(--font-selected);
     display: flex;
-    flex-flow: wrap row;
-    justify-content: center;
-    align-content: center;
+    flex-flow: nowrap row;
+    img{
+        display: inline-block;
+        align-self: center;
+    }
+}
+
+// .info {
+// text-align: left;
+// }
+
+.about-content {
+    display: flex ;
+    flex-flow: wrap column;
+    
+    h1 {
+         margin: 1px 3px 1px 10px;
+         color: var(--about-font-color);
+    }
+      h2 {
+         margin: 1px 3px 1px 10px;
+         color:   var(--secondary-font);
+    }
+}
+
+.info {
+      color: var(--about-font-color);
+}
+
+.icons {
+    background-color: lightblue;
+    height: 20px;
+    width: 20px;
 }
