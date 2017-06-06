@@ -411,27 +411,37 @@ template {
   display: block;
   width: 100%; }
 
-/*----------  Playfair Font  ----------*/
+/*----------  Maven Font  ----------*/
 @font-face {
-  font-family: 'Playfair';
-  src: url("../assets/fonts/playfair/PlayfairDisplay-Regular.ttf"); }
+  font-family: 'Maven';
+  src: url("../assets/fonts/Maven_Pro/MavenPro-Regular.ttf"); }
 
-/*----------  Ubunto Font  ----------*/
+/*----------  Lato Font  ----------*/
 @font-face {
-  font-family: 'Ubunto';
-  src: url("../assets/fonts/ubunto/Ubuntu-Light.ttf");
-  font-weight: 400; }
+  font-family: 'Lato';
+  src: url("../assets/fonts/Lato/Lato-Regular.ttf"); }
+
+/*----------  Lato-bold Font  ----------*/
+@font-face {
+  font-family: 'Lato-Bold';
+  src: url("../assets/fonts/Lato/Lato-Bold.ttf"); }
 
 :root {
   /* Layout */
-  --container-width: 1063px;
-  --inner-container-width: 900px;
+  --container-width: 1020px;
+  --inner-container-width: 820px;
   /* Fonts */
-  --primary-font: Playfair;
-  --secondary-font: Ubuntu;
+  --primary-font: Lato;
+  --secondary-font: Maven;
   /* Colors */
-  --main-color: #626262;
-  --sections-bg: #f0f0f0; }
+  --header-color: #323232;
+  --font-selected: #2eb398;
+  --about-font-color: #d7fcf5;
+  --about-lines-color: #219d84;
+  --secondary-font: #20816d;
+  --lines-color: #e4e9eb;
+  --footer-color: #222222;
+  --footer-text-color: #454545; }
 
 /*----------  Containers  ----------*/
 .container {
@@ -482,3 +492,11 @@ fieldset {
   margin: 0; }
 
 /* Components */
+header {
+  height: 63px;
+  width: var(--container-width);
+  background-color: var(--header-color);
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-content: center; }
