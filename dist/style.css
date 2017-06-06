@@ -562,3 +562,78 @@ fieldset {
   width: 20px;
   display: flex;
   flex-flow: nowrap row; }
+
+.editor {
+  width: var(--container-width);
+  height: 31.25rem;
+  background: #F2F2F2; }
+
+.canvas-container {
+  background-color: #F2F2F2;
+  display: flex;
+  flex-flow: nowrap row; }
+
+#canvas {
+  background: wheat;
+  width: 60%;
+  border-radius: 2px; }
+
+.tools-bar {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: center;
+  align-content: center;
+  padding: 1em;
+  border-radius: 2px;
+  border: solid 1px lightgrey; }
+
+.text-editor {
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: space-between;
+  align-items: stretch;
+  border-radius: 2px;
+  margin: 1em;
+  padding: 8px;
+  text-align: center;
+  height: 105px;
+  background-color: white; }
+  .text-editor input {
+    border-radius: 2px; }
+
+.exit, .btn-save, .add-text-box {
+  text-align: center;
+  height: 30px;
+  background: transparent;
+  border: 1px solid lightgray;
+  width: 100%;
+  border-radius: 4px;
+  margin: 10px 0;
+  transition: all .2s;
+  cursor: pointer; }
+  .exit:hover, .btn-save:hover, .add-text-box:hover {
+    box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
+
+.buttons-style {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 100%; }
+  .buttons-style button {
+    border: solid 1px lightgrey;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer; }
+    .buttons-style button:hover {
+      box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
+
+.btn-save {
+  background-color: #003bb3;
+  border: solid 1px darkblue;
+  line-height: 30px;
+  transition: all .2s; }
+  .btn-save:hover {
+    background-color: blue; }
