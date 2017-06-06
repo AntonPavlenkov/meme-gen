@@ -571,7 +571,11 @@ fieldset {
 .icons {
   display: flex;
   align-self: flex-end;
+<<<<<<< HEAD
   width: 100px; }
+=======
+  margin: 20px  10PX 0 0; }
+>>>>>>> bc637a0f81ef1e6406ef06e6348cdfe37905722d
   .icons img {
     width: 25px;
     height: 24px;
@@ -588,8 +592,12 @@ fieldset {
 
 .editor {
   width: var(--container-width);
-  height: 31.25rem;
-  background: #F2F2F2; }
+  height: 56.25rem;
+  background: #F2F2F2;
+  position: fixed;
+  top: 100vw;
+  transition: all .5s;
+  z-index: 5; }
 
 .canvas-container {
   background-color: #F2F2F2;
@@ -597,9 +605,10 @@ fieldset {
   flex-flow: nowrap row; }
 
 #canvas {
-  background: wheat;
+  background: whitesmoke;
   width: 60%;
-  border-radius: 2px; }
+  border-radius: 2px;
+  color: white; }
 
 .tools-bar {
   height: 100%;
@@ -613,6 +622,7 @@ fieldset {
   border: solid 1px lightgrey; }
 
 .text-editor {
+  border: solid 1px lightgrey;
   display: flex;
   flex-flow: wrap column;
   justify-content: space-between;
@@ -622,7 +632,7 @@ fieldset {
   padding: 8px;
   text-align: center;
   height: 105px;
-  background-color: white; }
+  background-color: #f5f5f5; }
   .text-editor input {
     border-radius: 2px; }
 
@@ -659,6 +669,7 @@ fieldset {
   line-height: 30px;
   transition: all .2s; }
   .btn-save:hover {
+<<<<<<< HEAD
     background-color: blue; }
 
 .get-in-touch {
@@ -702,3 +713,23 @@ textarea {
   height: 150px;
   overflow-y: scroll;
   resize: none; }
+=======
+    background-color: blue;
+    box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
+
+.gallery {
+  height: 33.875rem;
+  width: var(--container-width);
+  background: whitesmoke;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  align-content: space-between; }
+
+.meme {
+  background-color: lightgrey;
+  width: 250px;
+  height: 250px;
+  margin: 20px;
+  background-size: cover; }
+>>>>>>> bc637a0f81ef1e6406ef06e6348cdfe37905722d
