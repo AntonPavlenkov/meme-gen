@@ -34,4 +34,3 @@ function renderGallery (){
     document.querySelector('.gallery').innerHTML= `<img src="${gImgs[0].url}" />`;
 
 }
- renderGallery ();
