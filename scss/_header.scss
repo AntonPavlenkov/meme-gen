@@ -1,4 +1,4 @@
-header{
+.header{
     height: rem(63px);
     width: var(--container-width);
     background-color: var(--header-color);
@@ -8,7 +8,7 @@ header{
     align-content: center;
 }
 
-nav {
+.nav {
     font-family: Lato-Bold;
     color: #ffffff;
     text-transform: uppercase;

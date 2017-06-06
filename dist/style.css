@@ -492,7 +492,7 @@ fieldset {
   margin: 0; }
 
 /* Components */
-header {
+.header {
   height: 3.9375rem;
   width: var(--container-width);
   background-color: var(--header-color);
@@ -501,7 +501,7 @@ header {
   justify-content: center;
   align-content: center; }
 
-nav {
+.nav {
   font-family: Lato-Bold;
   color: #ffffff;
   text-transform: uppercase;
@@ -510,10 +510,10 @@ nav {
   justify-content: center;
   align-content: center;
   font-size: 0.4375em; }
-  nav a {
+  .nav a {
     margin: 0 2.3125rem;
     align-self: center; }
-    nav a:hover {
+    .nav a:hover {
       color: var(--font-selected); }
 
 .arrow {
@@ -559,6 +559,7 @@ nav {
 .icons {
   background-color: lightblue;
   height: 20px;
+<<<<<<< HEAD
   width: 20px;
   display: flex;
   flex-flow: nowrap row; }
@@ -589,3 +590,6 @@ nav {
 
 .hex2 {
   transform: rotate(-60deg); }
+=======
+  width: 20px; }
+>>>>>>> 63c7438532b668fc074489b7e8a1716d80932017
