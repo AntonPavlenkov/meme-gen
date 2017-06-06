@@ -1,17 +1,17 @@
-
-/*----------  Playfair Font  ----------*/
-
+/*----------  Maven Font  ----------*/
 @font-face {
-  font-family: 'Playfair';
-  src: url('../assets/fonts/playfair/PlayfairDisplay-Regular.ttf'); 
+  font-family: 'Maven';
+  src: url('../assets/fonts/Maven_Pro/MavenPro-Regular.ttf'); 
+}
+/*----------  Lato Font  ----------*/
+@font-face {
+  font-family: 'Lato';
+  src: url('../assets/fonts/Lato/Lato-Regular.ttf'); 
 }
 
-
-/*----------  Ubunto Font  ----------*/
-
+/*----------  Lato-bold Font  ----------*/
 @font-face {
-  font-family: 'Ubunto';
-  src: url('../assets/fonts/ubunto/Ubuntu-Light.ttf');
-  font-weight: 400;
+  font-family: 'Lato-Bold';
+  src: url('../assets/fonts/Lato/Lato-Bold.ttf'); 
 }
 
