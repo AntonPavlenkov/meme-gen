@@ -570,13 +570,30 @@ fieldset {
 
 .icons {
   display: flex;
-<<<<<<< HEAD
-  flex-flow: nowrap row; }
+  align-self: flex-end;
+  margin: 20px  10PX 0 0; }
+  .icons img {
+    width: 25px;
+    height: 24px;
+    margin: 0; }
+
+.limit {
+  transform: rotate(90deg);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  width: 100%;
+  border-width: 1px; }
 
 .editor {
   width: var(--container-width);
-  height: 31.25rem;
-  background: #F2F2F2; }
+  height: 56.25rem;
+  background: #F2F2F2;
+  position: fixed;
+  top: 100vw;
+  transition: all .5s;
+  z-index: 5; }
 
 .canvas-container {
   background-color: #F2F2F2;
@@ -584,9 +601,10 @@ fieldset {
   flex-flow: nowrap row; }
 
 #canvas {
-  background: wheat;
+  background: whitesmoke;
   width: 60%;
-  border-radius: 2px; }
+  border-radius: 2px;
+  color: white; }
 
 .tools-bar {
   height: 100%;
@@ -600,6 +618,7 @@ fieldset {
   border: solid 1px lightgrey; }
 
 .text-editor {
+  border: solid 1px lightgrey;
   display: flex;
   flex-flow: wrap column;
   justify-content: space-between;
@@ -609,7 +628,7 @@ fieldset {
   padding: 8px;
   text-align: center;
   height: 105px;
-  background-color: white; }
+  background-color: #f5f5f5; }
   .text-editor input {
     border-radius: 2px; }
 
@@ -646,21 +665,21 @@ fieldset {
   line-height: 30px;
   transition: all .2s; }
   .btn-save:hover {
-    background-color: blue; }
-=======
-  align-self: flex-end;
-  margin: 20px  10PX 0 0; }
-  .icons img {
-    width: 25px;
-    height: 24px;
-    margin: 0; }
+    background-color: blue;
+    box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
 
-.limit {
-  transform: rotate(90deg);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: inset;
-  width: 100%;
-  border-width: 1px; }
->>>>>>> 950b3ae51d3b1fecded92a0237fbcc5d06732fd0
+.gallery {
+  height: 33.875rem;
+  width: var(--container-width);
+  background: whitesmoke;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  align-content: space-between; }
+
+.meme {
+  background-color: lightgrey;
+  width: 250px;
+  height: 250px;
+  margin: 20px;
+  background-size: cover; }
