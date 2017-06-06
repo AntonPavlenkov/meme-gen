@@ -534,33 +534,54 @@ fieldset {
   z-index: -1; }
 
 .about {
+  padding: 0 50px;
+  display: inline-flex;
   height: 21.3125em;
-  width: var(--container-width);
+  width: calc( var(--container-width) /2);
   background-color: var(--font-selected);
-  display: flex;
-  flex-flow: nowrap row; }
+  flex-flow: nowrap row;
+  align-items: center;
+  justify-content: center; }
   .about img {
     display: inline-block;
-    align-self: center; }
+    align-self: center;
+    margin-right: 10px; }
+
+.about-container {
+  display: flex; }
 
 .about-content {
+  padding: 5px;
   display: flex;
   flex-flow: wrap column; }
   .about-content h1 {
+    font-size: 30PX;
     margin: 1px 3px 1px 10px;
     color: var(--about-font-color); }
   .about-content h2 {
+    font-size: 18PX;
     margin: 1px 3px 1px 10px;
     color: var(--secondary-font); }
+  .about-content p {
+    font-size: 12PX; }
 
 .info {
   color: var(--about-font-color); }
 
 .icons {
-  background-color: lightblue;
-  height: 20px;
-  width: 20px;
   display: flex;
-  flex-flow: nowrap row; }
-  .icons i {
-    width: 20px; }
+  align-self: flex-end;
+  margin: 20px  10PX 0 0; }
+  .icons img {
+    width: 25px;
+    height: 24px;
+    margin: 0; }
+
+.limit {
+  transform: rotate(90deg);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  width: 100%;
+  border-width: 1px; }
