@@ -1,0 +1,43 @@
+.get-in-touch {
+
+    padding: 0 50px;
+    display: inline-flex;
+    height: em(341px);
+     width:  var(--container-width) ;
+    background-color: var(--header-color);
+    flex-flow: nowrap column;
+    align-items: center;
+    justify-content:  center;
+
+
+   h1 {
+        font-size: 30PX;
+         margin: 1px 3px 1px 10px;
+         color: var(--about-font-color);
+    } 
+      h2 {
+          font-size: 18PX;
+         margin: 1px 3px 1px 10px;
+         color: var(--about-font-color);
+    }
+    }
+     
+li, ul {
+      list-style: none;
+}
+
+
+input , textarea {
+    // width: 100%;
+    // padding: 12px 20px;
+    // margin: 8px 0;
+    // box-sizing: border-box;
+    // border: none;
+    background-color: #454545;
+    color: white;
+    border: none;
+}
+
+.submit-button {
+    background-color: 
+}

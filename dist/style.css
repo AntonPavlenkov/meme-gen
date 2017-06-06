@@ -570,8 +570,20 @@ fieldset {
 
 .icons {
   display: flex;
-<<<<<<< HEAD
-  flex-flow: nowrap row; }
+  width: 100px; }
+  .icons img {
+    width: 25px;
+    height: 24px;
+    margin: 0; }
+
+.limit {
+  transform: rotate(90deg);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  width: 100%;
+  border-width: 1px; }
 
 .editor {
   width: var(--container-width);
@@ -647,20 +659,29 @@ fieldset {
   transition: all .2s; }
   .btn-save:hover {
     background-color: blue; }
-=======
-  align-self: flex-end;
-  margin: 20px  10PX 0 0; }
-  .icons img {
-    width: 25px;
-    height: 24px;
-    margin: 0; }
 
-.limit {
-  transform: rotate(90deg);
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: inset;
-  width: 100%;
-  border-width: 1px; }
->>>>>>> 950b3ae51d3b1fecded92a0237fbcc5d06732fd0
+.get-in-touch {
+  padding: 0 50px;
+  display: inline-flex;
+  height: 21.3125em;
+  width: var(--container-width);
+  background-color: var(--header-color);
+  flex-flow: nowrap column;
+  align-items: center;
+  justify-content: center; }
+  .get-in-touch h1 {
+    font-size: 30PX;
+    margin: 1px 3px 1px 10px;
+    color: var(--about-font-color); }
+  .get-in-touch h2 {
+    font-size: 18PX;
+    margin: 1px 3px 1px 10px;
+    color: var(--about-font-color); }
+
+li, ul {
+  list-style: none; }
+
+input, textarea {
+  background-color: #454545;
+  color: white;
+  border: none; }
