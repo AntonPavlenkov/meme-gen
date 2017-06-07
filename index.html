@@ -6,6 +6,10 @@
   <title>Meme Genertor</title>
   <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="dist/style.css">
+
+
+
+
 </head>
 
 <body onload="init()">
@@ -57,6 +61,14 @@
 
     </section>
     <section class="search">
+      <div class="search-form"> </div>
+      <form>
+        <input type="text" name="search" placeholder="Search..">
+        <input class="submit-button" type="submit" value="Submit" />
+      </form>
+      <div class="search-tags">
+      
+      </div>
     </section>
     <section class="gallery">
       <!--<div class="meme" onclick="memeClicked(1);">
@@ -100,8 +112,8 @@
         </div>
       </section>
 
+
       <section class="about right-about">
-        <hr class="limit">
 
         <!--<hr class="limit">-->
         <img src="http://farm3.staticflickr.com/2788/4392569951_8bcec3b3ed_z.jpg?zz=1" alt="" width="200" height="197" />
@@ -131,19 +143,20 @@
       <h2> In order to get in touch use the contact form below:</h2>
 
 
-      <form class="msg-send"> 
-     
-        <span class="required"></span><input type="text" name="field1" class="field-divided" placeholder="Name (Required)" />
+      <form class="msg-send">
 
-            <span class="required"></span>
-            <input type="email" name="field3" class="field-long" placeholder="Email (Required)" />
-             
-            <span class="required"></span>
-            <input text="email" name="field3" class="field-long" placeholder="Subject" />   
-          
-            <textarea name="field5" id="field5" class="field-long field-textarea" placeholder="Write your message here..."></textarea>
-      
-            <input  class ="submit-button" type="submit" value="Submit" />       
+        <span class="required"></span><input type="text" name="field1" class="field-divided" placeholder="Name (Required)"
+        />
+
+        <span class="required"></span>
+        <input type="email" name="field3" class="field-long" placeholder="Email (Required)" />
+
+        <span class="required"></span>
+        <input text="email" name="field3" class="field-long" placeholder="Subject" />
+
+        <textarea name="field5" id="field5" class="field-long field-textarea" placeholder="Write your message here..."></textarea>
+
+        <input class="submit-button" type="submit" value="Submit" />
       </form>
 
 

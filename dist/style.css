@@ -673,7 +673,11 @@ fieldset {
     box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
 
 .gallery {
+<<<<<<< HEAD
   height: 58.875rem;
+=======
+  height: 33.875rem;
+>>>>>>> c1ac63db39e97f45be64b2dacdb5f68dfb792207
   width: var(--container-width);
   background: whitesmoke;
   display: flex;
@@ -717,6 +721,7 @@ fieldset {
     border: none;
     width: 580px;
     height: 38px; }
+<<<<<<< HEAD
 
 .submit-button {
   margin-top: 10px;
@@ -728,3 +733,64 @@ textarea {
   height: 150px;
   overflow-y: scroll;
   resize: none; }
+=======
+  .get-in-touch .submit-button {
+    margin-top: 10px;
+    background-color: var(--font-selected);
+    width: 90px;
+    align-self: flex-end; }
+  .get-in-touch textarea {
+    height: 150px;
+    overflow-y: scroll;
+    resize: none; }
+
+.search {
+  height: 6.25rem;
+  width: var(--container-width);
+  background: whitesmoke;
+  display: flex-start;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  align-content: space-between; }
+  .search input[type=text] {
+    width: 130px;
+    text-align: 2px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url("../assets/img/magnifying_glass.png");
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+    margin-right: 0; }
+  .search input[type=text]:focus {
+    width: 90%; }
+  .search .submit-button {
+    margin-left: 0;
+    background-color: #d6d6d6;
+    width: 8%;
+    height: 46px;
+    border: none;
+    cursor: pointer; }
+
+.most-popular {
+  font-size: 60px; }
+
+.very-popular {
+  font-size: 45px; }
+
+.popular {
+  font-size: 37px; }
+
+.regular {
+  font-size: 30px; }
+
+.not-very-popular {
+  font-size: 25px; }
+
+.least-popular {
+  font-size: 15px; }
+>>>>>>> c1ac63db39e97f45be64b2dacdb5f68dfb792207
