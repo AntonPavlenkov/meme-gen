@@ -101,7 +101,7 @@ function renderKeys() {
             var imgs = filterByKeyWord(key);
             var className = createFontSize(calculatePercents(key));
 
-            strHtml += `<span class="${className}" onclick="(renderGallery(${imgs}))"> ${key} </span>\n`;
+            strHtml += `<span class="${className}" onclick="renderGallery(filterByKeyWord('${key}'))"> ${key} </span>\n`;
         }
    console.log(strHtml);
      keysDiv.innerHTML = strHtml;
