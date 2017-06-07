@@ -37,6 +37,7 @@ function init() {
 function renderGallery(imgs) {
     var strHtml;
     var elGallery = document.querySelector('.gallery');
+    elGallery.innerHTML = '';
     for (var i = 0; i < imgs.length; i++) {
         var meme = document.createElement('div');
         meme.className = 'meme';
@@ -59,7 +60,6 @@ function showEditor(param) {
 
 function memeClicked(idx) {
     gState.selectedImgIdx = idx;
-    // drawMemeImg(idx);
     showEditor(5);
 
 
