@@ -673,11 +673,7 @@ fieldset {
     box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
 
 .gallery {
-<<<<<<< HEAD
   height: 58.875rem;
-=======
-  height: 33.875rem;
->>>>>>> c1ac63db39e97f45be64b2dacdb5f68dfb792207
   width: var(--container-width);
   background: whitesmoke;
   display: flex;
@@ -721,19 +717,6 @@ fieldset {
     border: none;
     width: 580px;
     height: 38px; }
-<<<<<<< HEAD
-
-.submit-button {
-  margin-top: 10px;
-  background-color: var(--font-selected);
-  width: 90px;
-  align-self: flex-end; }
-
-textarea {
-  height: 150px;
-  overflow-y: scroll;
-  resize: none; }
-=======
   .get-in-touch .submit-button {
     margin-top: 10px;
     background-color: var(--font-selected);
@@ -793,4 +776,3 @@ textarea {
 
 .least-popular {
   font-size: 15px; }
->>>>>>> c1ac63db39e97f45be64b2dacdb5f68dfb792207

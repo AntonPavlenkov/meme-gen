@@ -75,14 +75,20 @@ function textOnCanvas(element) {
 
 
 function renderCanvas(){
-    drawMemeImg(gState.selectedImgIdx);
-    gState.txts[0].text = element.value;
-    var elCanvas = document.querySelector('#canvas');
+ var elCanvas = document.querySelector('#canvas');
     var context = elCanvas.getContext('2d');
-    context.font = gState.txts[0].size + 'px' + gState.txts[0].font;
-    context.fillText(gState.txts[0].text, 20, 20);
+    var imageObj = new Image();
+    imageObj.onload = function () {
+        context.drawImage(imageObj, 0, 0, elCanvas.width, elCanvas.height);
+        for (var i = 0; i < gState.txts.length; i++) {     
+        context.textAlign = gState.txts[i].align;
+        context.fillStyle = gState.txts[i].color;
+        context.font = gState.txts[i].size + 'px ' + gState.txts[i].font;
+        context.fillText(gState.txts[i].text, 20, 20+i*50);
+    };
+        }
+    imageObj.src = gImgs[gState.selectedImgIdx].url;
 }
-
 
 
 function saveMeme() {
