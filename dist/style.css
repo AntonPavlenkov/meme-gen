@@ -571,11 +571,7 @@ fieldset {
 .icons {
   display: flex;
   align-self: flex-end;
-<<<<<<< HEAD
   width: 100px; }
-=======
-  margin: 20px  10PX 0 0; }
->>>>>>> bc637a0f81ef1e6406ef06e6348cdfe37905722d
   .icons img {
     width: 25px;
     height: 24px;
@@ -660,6 +656,10 @@ fieldset {
     border-radius: 5px;
     background-color: transparent;
     cursor: pointer; }
+    .buttons-style button i {
+      text-align: center;
+      width: 100%;
+      height: 100%; }
     .buttons-style button:hover {
       box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
 
@@ -669,8 +669,24 @@ fieldset {
   line-height: 30px;
   transition: all .2s; }
   .btn-save:hover {
-<<<<<<< HEAD
-    background-color: blue; }
+    background-color: blue;
+    box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
+
+.gallery {
+  height: 58.875rem;
+  width: var(--container-width);
+  background: whitesmoke;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  align-content: space-between; }
+
+.meme {
+  background-color: lightgrey;
+  width: 250px;
+  height: 250px;
+  margin: 20px;
+  background-size: cover; }
 
 .get-in-touch {
   padding: 65px  120px;
@@ -692,16 +708,15 @@ fieldset {
   .get-in-touch form {
     display: flex;
     flex-flow: nowrap column; }
-
-input, textarea {
-  margin: 8px 0;
-  box-sizing: border-box;
-  font-size: 12px;
-  background-color: #454545;
-  color: white;
-  border: none;
-  width: 580px;
-  height: 38px; }
+  .get-in-touch input, .get-in-touch textarea {
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: 12px;
+    background-color: #454545;
+    color: white;
+    border: none;
+    width: 580px;
+    height: 38px; }
 
 .submit-button {
   margin-top: 10px;
@@ -713,23 +728,3 @@ textarea {
   height: 150px;
   overflow-y: scroll;
   resize: none; }
-=======
-    background-color: blue;
-    box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
-
-.gallery {
-  height: 33.875rem;
-  width: var(--container-width);
-  background: whitesmoke;
-  display: flex;
-  flex-flow: wrap row;
-  justify-content: space-between;
-  align-content: space-between; }
-
-.meme {
-  background-color: lightgrey;
-  width: 250px;
-  height: 250px;
-  margin: 20px;
-  background-size: cover; }
->>>>>>> bc637a0f81ef1e6406ef06e6348cdfe37905722d

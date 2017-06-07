@@ -26,10 +26,7 @@
         display: flex;
          flex-flow: nowrap column;
     }
- }
-     
-
-input , textarea {
+    input , textarea {
      margin: 8px 0;
      box-sizing: border-box;
     font-size: 12px;
@@ -39,6 +36,20 @@ input , textarea {
     width: 580px;
     height: 38px;
 }
+
+ }
+     
+
+// input , textarea {
+//      margin: 8px 0;
+//      box-sizing: border-box;
+//     font-size: 12px;
+//     background-color: #454545;
+//     color: white;
+//     border: none;
+//     width: 580px;
+//     height: 38px;
+// }
 
 .submit-button {
     margin-top: 10px;

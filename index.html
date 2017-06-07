@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Meme Genertor</title>
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="dist/style.css">
 </head>
 
@@ -25,27 +26,29 @@
     <section class="editor">
       <div class="editor-container">
         <div class="canvas-container">
-          <canvas id="canvas" style="height: 500; width: 60%;">
+          <canvas id="canvas" style="height: 500px; width: 80%;">
           </canvas>
           <div class="tools-bar">
             <button class="exit" onclick="showEditor(100);">exit</button>
-            <div class="text-editor">
+            <div class="text-box">
+            <div class="text-editor 0">
               text1
               <input type="text" oninput="textOnCanvas(this);">
-              <span class="buttons-style">
-              <button class="align-right">&roarr;</button>
-              <button class="align-center">&hoarr;</button>
-              <button class="align-left">&loarr;</button>
-              <button class="size-">&minus;</button>
-              <button class="size+">&plus;</button>
-              <button class="color-picker">CR</button>
-              <button class="font-border">B</button>
-              <button class="font">F</button>
-              <button class="remove-text-editor">D</button>
-              </span>
+                <span class="buttons-style">
+                        <button class="align-right" onclick="alignText('right',this)"><i class="fa fa-align-right"></i></button>
+                        <button class="align-center" onclick="alignText('center', this)"><i class="fa fa-align-center"></i></button>
+                        <button class="align-left" onclick="alignText('left' ,this)"><i class="fa fa-align-left"></i></button>
+                        <button class="size-" onclick="changeSize('false', this)"><i class="fa fa-minus"></i></button>
+                        <button class="size+" onclick="changeSize('true', this)"><i class="fa fa-plus"></i></button>
+                        <button class="color-picker jscolor {valueElement:null,value:'66ccff'}" onclick="updateColor(this)"><i class="fa fa-paint-brush"></i></button>
+                        <button class="font-border" onclick="addBorder()" ><i class="fa fa-bold"></i></button>
+                        <button class="font" onclick="changeFont()"><i class="fa fa-font"></i></button>
+                        <button class="remove-text-editor" onclick="removeTextEditor(this)"><i class="fa fa-trash"></i></button>
+                </span>
+            </div>
             </div>
             <button class="add-text-box" onclick="addTextBox()">Add another text &oplus;</button>
-            <button class="btn-save">Save &checkmark;</button>
+            <button class="btn-save" download="meme.png" onclick="saveMeme();">Save &checkmark;</button>
 
           </div>
         </div>
@@ -149,9 +152,9 @@
   <footer>
 
   </footer>
-
-  <script src="js/main.js"></script>
-    <script src="js/gallery.js"></script>
+      <script src="assets/jscolor-2/jscolor.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/gallery.js"></script>
 </body>
 
 </html>

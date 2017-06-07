@@ -1,9 +1,9 @@
 'use strict';
 var gImgs = [
-    { id: 1, url: 'assets/img/1.jpg', keyWords: ['anngery', 'Undecided','hesitate', 'man'] },
-    { id: 2, url: 'assets/img/2.jpg', keyWords: ['suspicious', 'Undecided','hesitate', 'man'  , 'testing' ] },
+    { id: 1, url: 'assets/img/1.jpg', keyWords: ['anngery', 'Undecided', 'hesitate', 'man'] },
+    { id: 2, url: 'assets/img/2.jpg', keyWords: ['suspicious', 'Undecided', 'hesitate', 'man', 'testing'] },
     { id: 3, url: 'assets/img/3.jpg', keyWords: ['nerd', 'man', 'child', 'smart'] },
-    { id: 4, url: 'assets/img/4.jpg', keyWords: ['baby' , 'sucsuess', 'established', 'complete'] },
+    { id: 4, url: 'assets/img/4.jpg', keyWords: ['baby', 'sucsuess', 'established', 'complete'] },
     { id: 5, url: 'assets/img/5.jpg', keyWords: ['happy'] },
     { id: 6, url: 'assets/img/6.jpg', keyWords: ['happy'] },
     { id: 7, url: 'assets/img/7.jpg', keyWords: ['happy'] },
@@ -30,63 +30,144 @@ var gState = {
         }
     ]
 }
-function init(){
+function init() {
     renderGallery(gImgs);
 }
 
-function renderGallery (imgs){
-     var strHtml;
+function renderGallery(imgs) {
+    var strHtml;
     var elGallery = document.querySelector('.gallery');
     for (var i = 0; i < imgs.length; i++) {
-        // strHtml += '<div class="meme" background-image: url('+ imgs[i].url+'); onclick="memeClicked('+i+');"></div>;'
         var meme = document.createElement('div');
         meme.className = 'meme';
-        meme.setAttribute('onclick', 'memeClicked('+i+')');
-        // meme.setAttribute('background-image', 'url('+ imgs[i].url+')')
-        // 'url(buttons/' + imagePrefix + '.png)';
-        var urlString = 'url('+ imgs[i].url+')';
-        meme.style.backgroundImage =  urlString;
+        meme.setAttribute('onclick', 'memeClicked(' + i + ')');
+        var urlString = 'url(' + imgs[i].url + ')';
+        meme.style.backgroundImage = urlString;
         elGallery.appendChild(meme);
     }
-    // elGallery.innerHTML = strHtml;
 }
 
 
 
 
-function showEditor(param){
+function showEditor(param) {
     var elEditor = document.querySelector('.editor');
-    elEditor.style.top = param +'vw';
+    elEditor.style.top = param + 'vw';
+    renderCanvas();
     console.log(elEditor);
 }
 
-function memeClicked(idx){
+function memeClicked(idx) {
     gState.selectedImgIdx = idx;
-    drawMemeImg(idx);
+    // drawMemeImg(idx);
     showEditor(5);
 
+
+}
+
+
+function textOnCanvas(element) {
+    var text = element.value;
+    element = element.parentElement.classList[1];
+    gState.txts[element].text = text;
+    renderCanvas();
+}
+
+
+function renderCanvas(){
+    var elCanvas = document.querySelector('#canvas');
+    var context = elCanvas.getContext('2d');
+    var imageObj = new Image();
+    imageObj.onload = function () {
+        context.drawImage(imageObj, 0, 0, elCanvas.width, elCanvas.height);
+        for (var i = 0; i < gState.txts.length; i++) {     
+        context.textAlign = gState.txts[i].align;
+        context.fillStyle = gState.txts[i].color;
+        context.font = gState.txts[i].size + 'px ' + gState.txts[i].font;
+        context.fillText(gState.txts[i].text, 20, 20+i*50);
+    };
+        }
+    imageObj.src = gImgs[gState.selectedImgIdx].url;
+}
+
+
+function saveMeme() {
+    var canvas = document.getElementById("canvas");
+    var img = canvas.toDataURL("image");
+    var url = img.replace(/^data:image\//, 'data:application/octet-stream');
+    window.location = url;
+
+
+    location.href = url;
+
+}
+
+function addTextBox() {
+    var newText = {
+            text: '',
+            size: 20,
+            align: 'left',
+            color: 'white',
+            font: 'Arial'
+        }
+    gState.txts.push(newText);
+    var strHtml;
+    var elTextArea = document.querySelector('.text-box');
+    
+    strHtml = `
+    <div class="text-editor ${gState.txts.length-1}">
+              text${gState.txts.length}
+              <input type="text" oninput="textOnCanvas(this);">
+               <span class="buttons-style">
+                        <button class="align-right" onclick="alignText('right',this)"><i class="fa fa-align-right"></i></button>
+                        <button class="align-center" onclick="alignText('center', this)"><i class="fa fa-align-center"></i></button>
+                        <button class="align-left" onclick="alignText('left' ,this)"><i class="fa fa-align-left"></i></button>
+                        <button class="size-" onclick="changeSize('false', this)"><i class="fa fa-minus"></i></button>
+                        <button class="size+" onclick="changeSize('true', this)"><i class="fa fa-plus"></i></button><script>jscolor.init();</script>
+                        <button class="color-picker${gState.txts.length-1} jscolor {valueElement:null,value:'6${gState.txts.length-1}ccff'}" onclick="updateColor(this)"><i class="fa fa-paint-brush"></i></button>
+                        <button class="font-border" onclick="addBorder()" ><i class="fa fa-bold"></i></button>
+                        <button class="font" onclick="changeFont()"><i class="fa fa-font"></i></button>
+                        <button class="remove-text-editor" onclick="removeTextEditor(this)"><i class="fa fa-trash"></i></button>
+                </span>
+            </div>`
+    elTextArea.innerHTML += strHtml;
+    jscolor.init();
     
 }
 
-
-function textOnCanvas(element){
-    drawMemeImg(gState.selectedImgIdx);
-    gState.txts[0].text = element.value;
-    var elCanvas = document.querySelector('#canvas');
-    var context = elCanvas.getContext('2d');
-    context.font = gState.txts[0].size+'px' + gState.txts[0].font;
-    context.fillText(gState.txts[0].text ,20,20);
+function alignText(direction, element) {
+    element = element.parentElement;
+    element = element.parentElement.classList;
+    element = element[1];
+    gState.txts[element].align = direction;
+    renderCanvas();
 }
 
-function drawMemeImg(idx){
-     var elCanvas = document.querySelector('#canvas');
-    var context = elCanvas.getContext('2d');
-    var imageObj = new Image();
-    imageObj.onload = function() {
-        context.fillStyle = gState.txts[0].color;
-        context.drawImage(imageObj, 0, 0, elCanvas.width , elCanvas.height);
-        context.font = gState.txts[0].size+'px ' + gState.txts[0].font;
-    context.fillText(gState.txts[0].text ,20,20);
-      };
-      imageObj.src = gImgs[idx].url;
+function changeSize(direction, element) {
+    element = element.parentElement;
+    element = element.parentElement.classList;
+    element = element[1];
+    if (direction === 'true') {
+        gState.txts[element].size++;
+    } else
+        gState.txts[element].size--;
+        renderCanvas();
+}
+
+function removeTextEditor(element){
+    element = element.parentElement;
+    element = element.parentElement;
+    gState.txts[element.classList[1]].text = '';
+    element.remove();
+    renderCanvas();
+    
+}
+
+function  updateColor(element){
+    var color = element;
+    element = element.parentElement;
+    element = element.parentElement.classList;
+    element = element[1];
+    gState.txts[element].color = color.style.backgroundColor;
+    renderCanvas();
 }
