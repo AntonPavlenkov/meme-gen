@@ -430,7 +430,11 @@ body {
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
+<<<<<<< HEAD
+  align-content: center; }
+=======
   align-items: center; }
+>>>>>>> 538effd7124156cee59f51c292036aa6ddb407fe
 
 :root {
   /* Layout */
@@ -510,13 +514,14 @@ fieldset {
   justify-content: center;
   align-content: center;
   position: fixed;
-  top: -9vh;
+  top: -9.5vh;
   transition: all .5s;
-  font-size: 2vw; }
+  font-size: 1.5vw; }
   .header:hover {
     top: 0vh; }
 
 .nav {
+  height: 10vh;
   background-color: var(--header-color);
   font-family: Lato-Bold;
   color: #ffffff;
@@ -526,14 +531,17 @@ fieldset {
   justify-content: center;
   align-content: center;
   font-size: 0.4375em; }
+  @media (max-width: 780px) {
+    .nav {
+      font-size: 0.875em; } }
   .nav a {
-    margin: 0 2.3125rem;
+    margin: 0 2.3125em;
     align-self: center; }
     .nav a:hover {
       color: var(--font-selected); }
 
 .arrow {
-  margin-top: 10px;
+  align-self: center;
   display: flex;
   width: 4rem;
   height: 3.4375rem;
@@ -541,12 +549,12 @@ fieldset {
   background-size: 4rem; }
 
 .thong {
-  margin-top: 23px;
+  margin-top: .8vw;
   align-self: center;
   position: fixed;
   background-color: #292929;
-  width: 64px;
-  height: 65px;
+  width: 13vh;
+  height: 13vh;
   transform: rotate(-45deg);
   z-index: -9; }
 
@@ -617,22 +625,45 @@ fieldset {
   position: fixed;
   top: 100vh;
   transition: all .5s;
-  z-index: 5; }
+  z-index: 5;
+  height: 120vh; }
+
+.editor-container {
+  display: flex;
+  flex-flow: nowrap row;
+  overflow-y: scroll; }
+
+@media (max-width: 780px) {
+  .editor {
+    height: 100%;
+    height: 500vh; }
+    .editor .canvas-container {
+      justify-content: center;
+      width: 100vw; }
+      .editor .canvas-container #canvas {
+        width: 100vw !important;
+        height: 70vh !important; }
+  .editor-container {
+    flex-flow: nowrap column; }
+    .editor-container .tools-bar {
+      display: block;
+      height: 30vh;
+      width: 100%; } }
 
 .canvas-container {
+  width: 50vw;
   background-color: #f2f2f2;
   display: flex;
   flex-flow: nowrap row; }
 
 #canvas {
   background: whitesmoke;
-  width: 60%;
   border-radius: 2px;
   color: white; }
 
 .tools-bar {
+  width: 50%;
   height: 100%;
-  flex-grow: 1;
   display: flex;
   flex-flow: wrap column;
   justify-content: center;
@@ -736,6 +767,11 @@ fieldset {
     .msg-send input,
     .msg-send textarea {
       width: 100%; } }
+
+@media (max-width: 780px) {
+  .meme {
+    width: 100%;
+    height: 100px; } }
 
 .get-in-touch {
   padding: 65px 120px;

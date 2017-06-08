@@ -7,9 +7,9 @@
     justify-content: center;
     align-content: center;
     position: fixed;
-    top: -9vh;
+    top: -9.5vh;
     transition: all .5s;
-    font-size: 2vw;
+    font-size: 1.5vw;
 
     &:hover{
         top: 0vh;
@@ -17,6 +17,7 @@
 }
 
 .nav {
+    height: 10vh;
     background-color: var(--header-color);
     font-family: Lato-Bold;
     color: #ffffff;
@@ -26,9 +27,12 @@
     justify-content: center;
     align-content: center;
     font-size: em(7px);
+    @media (max-width: 780px){
+      font-size: em(14px);
+    }
     
 a{
-    margin: 0 rem(37px);
+    margin: 0 em(37px);
     align-self: center;
 
     &:hover {
@@ -38,7 +42,7 @@ a{
 }
 
 .arrow {
-  margin-top: 10px;
+  align-self: center;
   display: flex;
   width: rem(64px);
   height: rem(55px);
@@ -47,12 +51,12 @@ a{
 }
 
 .thong{
-    margin-top: 23px;
+    margin-top: .8vw;
     align-self: center;
     position: fixed;
     background-color: #292929;
-    width: 64px;
-    height: 65px;
+    width: 13vh;
+    height: 13vh;
     transform: rotate(-45deg);
     z-index: -9;
 }
