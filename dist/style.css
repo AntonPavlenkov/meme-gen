@@ -442,6 +442,9 @@ template {
   --lines-color: #e4e9eb;
   --footer-color: #222222;
   --footer-text-color: #454545; }
+  @media (max-width: 780px) {
+    :root {
+      --container-width: 100vw; } }
 
 /*----------  Containers  ----------*/
 .container {
@@ -493,15 +496,22 @@ fieldset {
 
 /* Components */
 .header {
-  height: 3.9375rem;
+  height: 10vh;
   width: var(--container-width);
   background-color: var(--header-color);
   display: flex;
-  flex-flow: wrap column;
+  flex-flow: nowrap column;
   justify-content: center;
-  align-content: center; }
+  align-content: center;
+  position: fixed;
+  top: -9vh;
+  transition: all .5s;
+  font-size: 2vw; }
+  .header:hover {
+    top: 0vh; }
 
 .nav {
+  background-color: var(--header-color);
   font-family: Lato-Bold;
   color: #ffffff;
   text-transform: uppercase;
@@ -526,12 +536,13 @@ fieldset {
 
 .thong {
   margin-top: 23px;
-  position: absolute;
+  align-self: center;
+  position: fixed;
   background-color: #292929;
   width: 64px;
   height: 65px;
   transform: rotate(-45deg);
-  z-index: -1; }
+  z-index: -9; }
 
 .about {
   padding: 0 50px;
@@ -587,11 +598,12 @@ fieldset {
   border-width: 1px; }
 
 .editor {
+  margin-top: 1em;
   width: var(--container-width);
   height: 56.25rem;
   background: #F2F2F2;
   position: fixed;
-  top: 100vw;
+  top: 100vh;
   transition: all .5s;
   z-index: 5; }
 
@@ -620,7 +632,7 @@ fieldset {
 .text-editor {
   border: solid 1px lightgrey;
   display: flex;
-  flex-flow: wrap column;
+  flex-flow: nowrap column;
   justify-content: space-between;
   align-items: stretch;
   border-radius: 2px;
@@ -631,6 +643,9 @@ fieldset {
   background-color: #f5f5f5; }
   .text-editor input {
     border-radius: 2px; }
+  .text-editor .selecth1FontFamily {
+    display: none;
+    position: absolute; }
 
 .exit, .btn-save, .add-text-box {
   text-align: center;
@@ -647,7 +662,7 @@ fieldset {
 
 .buttons-style {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-around;
   align-items: stretch;
   width: 100%; }
@@ -737,7 +752,6 @@ fieldset {
   align-content: space-between; }
   .search input[type=text] {
     width: 130px;
-    text-align: 2px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -746,7 +760,7 @@ fieldset {
     background-image: url("../assets/img/magnifying_glass.png");
     background-position: 10px 10px;
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 12px 20px 12px 5vw;
     transition: width 0.4s ease-in-out;
     margin-right: 0; }
   .search input[type=text]:focus {

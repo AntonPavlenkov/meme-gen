@@ -15,11 +15,11 @@
 <body onload="init()">
 
   <header class="header">
+        <div class="thong"></div>
     <nav class="nav">
       <a href="#">portfolio</a>
       <a href="#">about</a>
-      <div class="arrow" onclick="showEditor(5);">
-        <div class="thong"></div>
+      <div class="arrow" onclick="showEditor(50);">
       </div>
       <a href="#">blog</a>
       <a href="#">get in touch</a>
@@ -30,10 +30,10 @@
     <section class="editor">
       <div class="editor-container">
         <div class="canvas-container">
-          <canvas id="canvas" style="height: 500px; width: 80%;">
+          <canvas id="canvas" style="height: 500px; width: 60vw;">
           </canvas>
           <div class="tools-bar">
-            <button class="exit" onclick="showEditor(100);">exit</button>
+            <button class="exit" onclick="showEditor(1200);">exit</button>
             <div class="text-box">
             <div class="text-editor 0">
               text1
@@ -45,8 +45,17 @@
                         <button class="size-" onclick="changeSize('false', this)"><i class="fa fa-minus"></i></button>
                         <button class="size+" onclick="changeSize('true', this)"><i class="fa fa-plus"></i></button>
                         <button class="color-picker jscolor {valueElement:null,value:'66ccff'}" onclick="updateColor(this)"><i class="fa fa-paint-brush"></i></button>
-                        <button class="font-border" onclick="addBorder()" ><i class="fa fa-bold"></i></button>
-                        <button class="font" onclick="changeFont()"><i class="fa fa-font"></i></button>
+                        <button class="font-border" onclick="addBorder(this)" ><i class="fa fa-bold"></i></button>
+                        <button class="font" onclick="changeFont(this)">
+                                <select class="selecth1FontFamily" name="selectFontFamily" onchange="updateh1family(this);">
+                                  <option value="cursive"> Serif </option>
+                                  <option value="fantasy"> Arial </option>
+                                  <option value="monospace"> Sans </option>                                  
+                                  <option value="serif"> Tahoma </option>
+                                  <option value="unset"> Verdana </option>
+                                  <option value="cursive"> Lucida </option>                               
+                                </select>
+                          <i class="fa fa-font"></i></button>   
                         <button class="remove-text-editor" onclick="removeTextEditor(this)"><i class="fa fa-trash"></i></button>
                 </span>
             </div>
