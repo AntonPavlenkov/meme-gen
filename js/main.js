@@ -58,6 +58,21 @@ function renderGallery(imgs) {
 }
 
 
+function renderGallery(imgs) {
+    var strHtml;
+    var elGallery = document.querySelector('.gallery');
+    elGallery.innerHTML = '';
+    for (var i = 0; i < imgs.length; i++) {
+        var meme = document.createElement('div');
+        meme.className = 'meme';
+        meme.setAttribute('onclick', 'memeClicked(' + imgs[i].id + ')');
+        var urlString = 'url(' + imgs[i].url + ')';
+        meme.style.backgroundImage = urlString;
+        elGallery.appendChild(meme);
+    }
+}
+
+
 function showEditor(param) {
     var elEditor = document.querySelector('.editor');
     elEditor.style.top = param + 'vh';
