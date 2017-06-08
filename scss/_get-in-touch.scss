@@ -1,3 +1,23 @@
+@media (max-width: 780px) {
+  .get-in-touch {
+    padding: 0 !important;
+    h1 , h2 {
+      padding: 0 1em;
+    }
+  }
+  .msg-send
+  {
+    padding: 0  1em; 
+    display: block;
+    width: 100% !important;
+    box-sizing: none;
+     input,
+  textarea {
+    width: 100%;
+  }
+}
+}
+
 .get-in-touch {
   padding: 65px 120px;
   display: inline-flex;
@@ -20,11 +40,6 @@
     color: #bfbfbf;
   }
 
-  form {
-    display: flex;
-    flex-flow: nowrap column;
-  }
-
   input,
   textarea {
     margin: 8px 0;
@@ -33,8 +48,8 @@
     padding-left: 5px;
     background-color: #454545;
     color: white;
-    border: 2px solid transparent ;
-    width: 580px;
+    border: 2px solid transparent;
+    width: 100%;
     height: 38px;
   }
 
@@ -47,17 +62,17 @@
 
   textarea {
     height: 150px;
-    overflow-y: scroll;
+    //   overflow-y: scroll;
     resize: none;
   }
 }
 
 .required {
-  outline :2px solid red;
+  outline: 2px solid red;
 }
 
 .msg-send {
   display: flex;
   flex-flow: nowrap column;
-  
+  width: 70%;
 }

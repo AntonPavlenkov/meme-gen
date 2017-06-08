@@ -1,11 +1,12 @@
 .search {
-  height: rem(150px);
+  padding-top: 1vh;
+  height: rem(200px);
   width: var(--container-width);
   background: whitesmoke;
-  display: flex-start;
-  flex-flow: wrap row;
-  justify-content: space-between;
-  align-content: space-between;
+  display: flex;
+  flex-flow: nowrap column;
+  justify-content: center;
+  align-items: baseline;
 
   input[type=text] {
     width: 200px;
@@ -33,40 +34,82 @@
     height: 46px;
     border: none;
     cursor: pointer;
-  }
 
-  span {
     &:hover {
-      font-size: 60px;
-      cursor: pointer;
+      background-color: var(--secondary-font);
     }
   }
 }
 
 .search-tags {
-  text-align: center;
+  width: 70%;
+  padding-top: 2em;
+  align-self: center;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: baseline;
+  align-content: center;
+  margin: 3px;
+
+  span {
+    transition: all 0.4s;
+
+    &:hover {
+      color: var(--font-selected);
+      cursor: pointer;
+    }
+  }
 }
+
 
 .most-popular {
   font-size: 60px;
+
+  &:hover {
+    font-size: 65px;
+  }
 }
 
 .very-popular {
   font-size: 45px;
+
+  &:hover {
+    font-size: 50px;
+  }
 }
 
 .popular {
   font-size: 37px;
+
+  &:hover {
+    font-size: 40px;
+  }
 }
 
 .regular {
   font-size: 30px;
+
+  &:hover {
+    font-size: 35px;
+  }
 }
 
 .not-very-popular {
   font-size: 25px;
+
+  &:hover {
+    font-size: 27px;
+  }
 }
 
 .least-popular {
   font-size: 15px;
+
+  &:hover {
+    font-size: 20px;
+  }
+}
+
+.search-form{
+  width: 100%;
 }

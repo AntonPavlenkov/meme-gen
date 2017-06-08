@@ -4,15 +4,22 @@
   background: whitesmoke;
   display: flex;
   flex-flow: wrap row;
-  justify-content: space-between;
+  justify-content: center;
   align-content: space-between;
+  overflow-y: scroll;
 }
 
 .meme {
+  &:hover{
+    cursor: pointer
+  };
+  
   background-color: lightgrey;
-  width: 250px;
-  height: 250px;
-  margin: 20px;
+  width: 180px;
+  height: 206px;
+  margin: 10px;
+  //border-radius: 20%;
+   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   // background-image: url('../assets/img/1.jpg');
 
   background-size: cover;

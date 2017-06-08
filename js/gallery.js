@@ -67,14 +67,15 @@ function search() {
     var inputSearch = document.getElementById("search");
     var key = inputSearch.value;
     countKeysSearch(key);
+    saveToStorage('keyCount', gKeysCount)
     renderKeys();
     var filteredImgs = filterByKeyWord(key);
     if (filteredImgs.length === 0) {
         elGallery.innerHTML = "Soory, not matching results"
     }
     else {
-            renderGallery(filteredImgs);
-            
+        renderGallery(filteredImgs);
+
     }
     inputSearch.value = "";
 }
@@ -88,13 +89,10 @@ function renderKeys() {
         var className = createFontSize(calculatePercents(key));
         strHtml += `<span class="${className}" onclick="renderGallery(filterByKeyWord('${key}'))"> ${key} </span>\n`;
     }
-    saveToStorage('keyCount', gKeysCount)
-    // console.log(strHtml);
     keysDiv.innerHTML = strHtml;
 }
 
 
-renderKeys();
 
 
 
