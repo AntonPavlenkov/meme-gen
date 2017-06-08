@@ -430,11 +430,13 @@ body {
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
-<<<<<<< HEAD
   align-content: center; }
-=======
+
+body {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
   align-items: center; }
->>>>>>> 538effd7124156cee59f51c292036aa6ddb407fe
 
 :root {
   /* Layout */
@@ -617,6 +619,9 @@ fieldset {
   width: 100%;
   border-width: 1px; }
 
+.self {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+
 .editor {
   margin-top: 1em;
   width: var(--container-width);
@@ -735,24 +740,30 @@ fieldset {
     box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
 
 .gallery {
-  height: 58.875rem;
   width: var(--container-width);
   background: whitesmoke;
   display: flex;
   flex-flow: wrap row;
-  justify-content: center;
-  align-content: space-between;
-  overflow-y: scroll; }
+  justify-content: flex-start;
+  align-content: space-between; }
+  .gallery .meme:nth-child(8n+5) {
+    margin-left: 120px; }
 
 .meme {
-  background-color: lightgrey;
+  transition: all 0.5s;
   width: 180px;
   height: 206px;
-  margin: 10px;
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  margin: 0 15px;
   background-size: cover; }
   .meme:hover {
-    cursor: pointer; }
+    cursor: pointer;
+    opacity: 0.6; }
+
+@media (max-width: 780px) {
+  .meme {
+    width: 100%;
+    height: 100px; } }
 
 @media (max-width: 780px) {
   .get-in-touch {
@@ -767,11 +778,6 @@ fieldset {
     .msg-send input,
     .msg-send textarea {
       width: 100%; } }
-
-@media (max-width: 780px) {
-  .meme {
-    width: 100%;
-    height: 100px; } }
 
 .get-in-touch {
   padding: 65px 120px;

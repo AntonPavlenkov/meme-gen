@@ -29,14 +29,14 @@
         <div class="canvas-container">
           <canvas id="canvas" style="height: 70vh; width: 50vw;">
           </canvas>
-          </div>
-          <div class="tools-bar">
-            <button class="exit" onclick="showEditor(1200);">exit</button>
-            <div class="text-box">
-              <div class="text-editor 0">
-                text1
-                <input type="text" oninput="textOnCanvas(this);">
-                <span class="buttons-style">
+        </div>
+        <div class="tools-bar">
+          <button class="exit" onclick="showEditor(1200);">exit</button>
+          <div class="text-box">
+            <div class="text-editor 0">
+              text1
+              <input type="text" oninput="textOnCanvas(this);">
+              <span class="buttons-style">
                         <button class="align-right" onclick="alignText('right',this)"><i class="fa fa-align-right"></i></button>
                         <button class="align-center" onclick="alignText('center', this)"><i class="fa fa-align-center"></i></button>
                         <button class="align-left" onclick="alignText('left' ,this)"><i class="fa fa-align-left"></i></button>
@@ -56,12 +56,12 @@
                           <i class="fa fa-font"></i></button>   
                         <button class="remove-text-editor" onclick="removeTextEditor(this)"><i class="fa fa-trash"></i></button>
                 </span>
-              </div>
             </div>
-            <button class="add-text-box" onclick="addTextBox()">Add another text &oplus;</button>
-            <button class="btn-save" download="meme.png" onclick="saveMeme();">Save &checkmark;</button>
+          </div>
+          <button class="add-text-box" onclick="addTextBox()">Add another text &oplus;</button>
+          <button class="btn-save" download="meme.png" onclick="saveMeme();">Save &checkmark;</button>
 
-          
+
         </div>
       </div>
 
@@ -101,7 +101,8 @@
     <section class="about-container">
       <section class="about left-about">
 
-        <img src="http://farm3.staticflickr.com/2788/4392569951_8bcec3b3ed_z.jpg?zz=1" alt="" width="200" height="197" />
+        <img class="self" src="http://farm3.staticflickr.com/2788/4392569951_8bcec3b3ed_z.jpg?zz=1" alt="" width="200" height="197"
+        />
         <div class="about-content">
           <h1>Inbar Svarzenberg</h1>
           <h2> Student - Coding Academy </h2>
@@ -123,7 +124,8 @@
       <section class="about right-about">
 
         <!--<hr class="limit">-->
-        <img src="http://farm3.staticflickr.com/2788/4392569951_8bcec3b3ed_z.jpg?zz=1" alt="" width="200" height="197" />
+        <img class="self" src="http://farm3.staticflickr.com/2788/4392569951_8bcec3b3ed_z.jpg?zz=1" alt="" width="200" height="197"
+        />
 
         <div class="about-content">
           <h1>Anton Pavlenkov</h1>

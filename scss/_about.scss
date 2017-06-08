@@ -1,9 +1,9 @@
 @media (max-width: 780px) {
   .about {
     max-width: 100% !important;
- //   min-width: 100% !important;
+    //   min-width: 100% !important;
   }
-  }
+}
 
 .about {
   padding: 0 50px;
@@ -27,7 +27,6 @@
   display: flex;
   flex-wrap: wrap;
   background-color: var(--font-selected);
-  
 }
 
 .about-content {
@@ -76,4 +75,8 @@
   border-style: inset;
   width: 100%;
   border-width: 1px;
+}
+
+.self {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }

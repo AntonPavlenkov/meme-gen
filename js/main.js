@@ -31,8 +31,8 @@ var gState = {
         }
     ]
 }
-function init() {
-    renderGallery(gImgs);
+function init()  {
+  renderGallery(gImgs);
     // if (loadFromStorage('keyCount') !== null || loadFromStorage('keyCount') !== undefined)
     //     gKeysCount = loadFromStorage('keyCount');
     renderKeys();
@@ -40,39 +40,22 @@ function init() {
 
 
 }
+
+
+
 function renderGallery(imgs) {
     var strHtml;
     var elGallery = document.querySelector('.gallery');
     elGallery.innerHTML = '';
-    var count = 0;
-    while (count < imgs.length) {
+    for (var i = 0; i < imgs.length; i++) {
         var meme = document.createElement('div');
-        for (var i = 0; i < 4; i++) {
-            meme.setAttribute('onclick', 'memeClicked(' + imgs[count].id + ')');
-            var urlString = 'url(' + imgs[count].url + ')';
-            meme.style.backgroundImage = urlString;
-            count++;
-            elGallery.appendChild(meme);
-        }
-
-
+        meme.className = 'meme';
+        meme.setAttribute('onclick', 'memeClicked(' + imgs[i].id + ')');
+        var urlString = 'url(' + imgs[i].url + ')';
+        meme.style.backgroundImage = urlString;
+        elGallery.appendChild(meme);
     }
 }
-
-
-// function renderGallery(imgs) {
-//     var strHtml;
-//     var elGallery = document.querySelector('.gallery');
-//     elGallery.innerHTML = '';
-//     for (var i = 0; i < imgs.length; i++) {
-//         var meme = document.createElement('div');
-//         meme.className = 'meme';
-//         meme.setAttribute('onclick', 'memeClicked(' + imgs[i].id + ')');
-//         var urlString = 'url(' + imgs[i].url + ')';
-//         meme.style.backgroundImage = urlString;
-//         elGallery.appendChild(meme);
-//     }
-// }
 
 
 function showEditor(param) {
