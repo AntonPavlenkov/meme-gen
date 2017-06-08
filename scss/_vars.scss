@@ -1,13 +1,21 @@
 $container-width: 1020px;
 $mobile-breakpoint: 642px;
 
+body {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-items: center;
+}
+
 :root {
   /* Layout */
   --container-width: $container-width;
   --inner-container-width: 820px;
- @media (max-width: 780px){
-   --container-width: 100vw;
- }
+
+  @media (max-width: 780px) {
+    --container-width: 100vw;
+  }
   /* Fonts */
   --primary-font: Lato;
   --secondary-font: Maven;

@@ -1,8 +1,16 @@
+@media (max-width: 780px) {
+  .about {
+    max-width: 100% !important;
+ //   min-width: 100% !important;
+  }
+  }
+
 .about {
   padding: 0 50px;
   display: inline-flex;
   height: em(341px);
   max-width: calc(var(--container-width) /2);
+  //min-width: 400px;
   background-color: var(--font-selected);
   flex-flow: nowrap row;
   align-items: center;
@@ -17,12 +25,15 @@
 
 .about-container {
   display: flex;
+  flex-wrap: wrap;
+  background-color: var(--font-selected);
+  
 }
 
 .about-content {
   padding: 5px;
   display: flex;
-  flex-flow: wrap column;
+  flex-flow: wrap row;
 
   h1 {
     font-size: 30PX;

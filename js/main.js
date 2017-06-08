@@ -33,21 +33,46 @@ var gState = {
 }
 function init() {
     renderGallery(gImgs);
-}
+    // if (loadFromStorage('keyCount') !== null || loadFromStorage('keyCount') !== undefined)
+    //     gKeysCount = loadFromStorage('keyCount');
+    renderKeys();
 
+
+
+}
 function renderGallery(imgs) {
     var strHtml;
     var elGallery = document.querySelector('.gallery');
     elGallery.innerHTML = '';
-    for (var i = 0; i < imgs.length; i++) {
+    var count = 0;
+    while (count < imgs.length) {
         var meme = document.createElement('div');
-        meme.className = 'meme';
-        meme.setAttribute('onclick', 'memeClicked(' + imgs[i].id + ')');
-        var urlString = 'url(' + imgs[i].url + ')';
-        meme.style.backgroundImage = urlString;
-        elGallery.appendChild(meme);
+        for (var i = 0; i < 4; i++) {
+            meme.setAttribute('onclick', 'memeClicked(' + imgs[count].id + ')');
+            var urlString = 'url(' + imgs[count].url + ')';
+            meme.style.backgroundImage = urlString;
+            count++;
+            elGallery.appendChild(meme);
+        }
+
+
     }
 }
+
+
+// function renderGallery(imgs) {
+//     var strHtml;
+//     var elGallery = document.querySelector('.gallery');
+//     elGallery.innerHTML = '';
+//     for (var i = 0; i < imgs.length; i++) {
+//         var meme = document.createElement('div');
+//         meme.className = 'meme';
+//         meme.setAttribute('onclick', 'memeClicked(' + imgs[i].id + ')');
+//         var urlString = 'url(' + imgs[i].url + ')';
+//         meme.style.backgroundImage = urlString;
+//         elGallery.appendChild(meme);
+//     }
+// }
 
 
 function showEditor(param) {
@@ -83,22 +108,22 @@ function renderCanvas() {
     imageObj.onload = function () {
         context.drawImage(imageObj, 0, 0, elCanvas.width, elCanvas.height);
         for (var i = 0; i < gState.txts.length; i++) {
-            if(gState.txts[i].align === 'center'){
+            if (gState.txts[i].align === 'center') {
                 x = elCanvas.width / 2;
-            }else if(gState.txts[i].align === 'left'){
+            } else if (gState.txts[i].align === 'left') {
                 x = 20;
-            }else{
+            } else {
                 x = elCanvas.width - 20;
             }
-            if(i === 0){
-             y = 40;
-            }else if (i === 2){
-                y = elCanvas.height-40;
-            }else{
-                y = (elCanvas.height) /2
+            if (i === 0) {
+                y = 40;
+            } else if (i === 2) {
+                y = elCanvas.height - 40;
+            } else {
+                y = (elCanvas.height) / 2
             }
 
-        
+
             context.textAlign = gState.txts[i].align;
             context.fillStyle = gState.txts[i].color;
             context.font = gState.txts[i].textDecor + gState.txts[i].size + 'px ' + gState.txts[i].font;
@@ -205,16 +230,16 @@ function addBorder(element) {
 }
 
 
-function changeFont(element){
-   element.firstElementChild.style.display = 'block';
+function changeFont(element) {
+    element.firstElementChild.style.display = 'block';
 }
 
-function updateh1family(element){
-        element.style.display = 'none';
-        var family = element.options[element.selectedIndex].value;
-        element = element.parentElement;
-        element = element.parentElement;
-        element = element.parentElement.classList; 
-        gState.txts[element[1]].font = family;
-        renderCanvas();
+function updateh1family(element) {
+    element.style.display = 'none';
+    var family = element.options[element.selectedIndex].value;
+    element = element.parentElement;
+    element = element.parentElement;
+    element = element.parentElement.classList;
+    gState.txts[element[1]].font = family;
+    renderCanvas();
 }

@@ -426,6 +426,12 @@ template {
   font-family: 'Lato-Bold';
   src: url("../assets/fonts/Lato/Lato-Bold.ttf"); }
 
+body {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-items: center; }
+
 :root {
   /* Layout */
   --container-width: 1020px;
@@ -544,6 +550,10 @@ fieldset {
   transform: rotate(-45deg);
   z-index: -9; }
 
+@media (max-width: 780px) {
+  .about {
+    max-width: 100% !important; } }
+
 .about {
   padding: 0 50px;
   display: inline-flex;
@@ -559,12 +569,14 @@ fieldset {
     margin-right: 10px; }
 
 .about-container {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--font-selected); }
 
 .about-content {
   padding: 5px;
   display: flex;
-  flex-flow: wrap column; }
+  flex-flow: wrap row; }
   .about-content h1 {
     font-size: 30PX;
     margin: 1px 3px 1px 10px;
@@ -601,7 +613,7 @@ fieldset {
   margin-top: 1em;
   width: var(--container-width);
   height: 56.25rem;
-  background: #f2f2f2;
+  background: #F2F2F2;
   position: fixed;
   top: 100vh;
   transition: all .5s;
@@ -697,15 +709,33 @@ fieldset {
   background: whitesmoke;
   display: flex;
   flex-flow: wrap row;
-  justify-content: space-between;
-  align-content: space-between; }
+  justify-content: center;
+  align-content: space-between;
+  overflow-y: scroll; }
 
 .meme {
   background-color: lightgrey;
-  width: 250px;
-  height: 250px;
-  margin: 20px;
+  width: 180px;
+  height: 206px;
+  margin: 10px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   background-size: cover; }
+  .meme:hover {
+    cursor: pointer; }
+
+@media (max-width: 780px) {
+  .get-in-touch {
+    padding: 0 !important; }
+    .get-in-touch h1, .get-in-touch h2 {
+      padding: 0 1em; }
+  .msg-send {
+    padding: 0  1em;
+    display: block;
+    width: 100% !important;
+    box-sizing: none; }
+    .msg-send input,
+    .msg-send textarea {
+      width: 100%; } }
 
 .get-in-touch {
   padding: 65px 120px;
@@ -724,9 +754,6 @@ fieldset {
     font-size: 18PX;
     margin: 1px 3px 6px 10px;
     color: #bfbfbf; }
-  .get-in-touch form {
-    display: flex;
-    flex-flow: nowrap column; }
   .get-in-touch input,
   .get-in-touch textarea {
     margin: 8px 0;
@@ -736,7 +763,7 @@ fieldset {
     background-color: #454545;
     color: white;
     border: 2px solid transparent;
-    width: 580px;
+    width: 100%;
     height: 38px; }
   .get-in-touch .submit-button {
     margin-top: 10px;
@@ -745,7 +772,6 @@ fieldset {
     align-self: flex-end; }
   .get-in-touch textarea {
     height: 150px;
-    overflow-y: scroll;
     resize: none; }
 
 .required {
@@ -753,22 +779,20 @@ fieldset {
 
 .msg-send {
   display: flex;
-  flex-flow: nowrap column; }
+  flex-flow: nowrap column;
+  width: 70%; }
 
 .search {
-  height: 9.375rem;
+  padding-top: 1vh;
+  height: 12.5rem;
   width: var(--container-width);
   background: whitesmoke;
-  display: flex-start;
-  flex-flow: wrap row;
-  justify-content: space-between;
-  align-content: space-between; }
+  display: flex;
+  flex-flow: nowrap column;
+  justify-content: center;
+  align-items: baseline; }
   .search input[type=text] {
-<<<<<<< HEAD
-    width: 130px;
-=======
     width: 200px;
->>>>>>> 82c892be93252024cc3d46a67335e6d1be3ad04e
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -781,8 +805,7 @@ fieldset {
     transition: width 0.4s ease-in-out;
     margin-right: 7px; }
     .search input[type=text]:focus {
-      width: 90%;
-      transition: width 0.4s ease-in-out; }
+      width: 90%; }
   .search .submit-button {
     margin-left: 0;
     background-color: #d6d6d6;
@@ -790,27 +813,53 @@ fieldset {
     height: 46px;
     border: none;
     cursor: pointer; }
-  .search span:hover {
-    font-size: 60px;
-    cursor: pointer; }
+    .search .submit-button:hover {
+      background-color: var(--secondary-font); }
 
 .search-tags {
-  text-align: center; }
+  width: 70%;
+  padding-top: 2em;
+  align-self: center;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: baseline;
+  align-content: center;
+  margin: 3px; }
+  .search-tags span {
+    transition: all 0.4s; }
+    .search-tags span:hover {
+      color: var(--font-selected);
+      cursor: pointer; }
 
 .most-popular {
   font-size: 60px; }
+  .most-popular:hover {
+    font-size: 65px; }
 
 .very-popular {
   font-size: 45px; }
+  .very-popular:hover {
+    font-size: 50px; }
 
 .popular {
   font-size: 37px; }
+  .popular:hover {
+    font-size: 40px; }
 
 .regular {
   font-size: 30px; }
+  .regular:hover {
+    font-size: 35px; }
 
 .not-very-popular {
   font-size: 25px; }
+  .not-very-popular:hover {
+    font-size: 27px; }
 
 .least-popular {
   font-size: 15px; }
+  .least-popular:hover {
+    font-size: 20px; }
+
+.search-form {
+  width: 100%; }
