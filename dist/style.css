@@ -430,11 +430,13 @@ body {
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
-<<<<<<< HEAD
   align-content: center; }
-=======
+
+body {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
   align-items: center; }
->>>>>>> 538effd7124156cee59f51c292036aa6ddb407fe
 
 :root {
   /* Layout */
@@ -516,7 +518,8 @@ fieldset {
   position: fixed;
   top: -9.5vh;
   transition: all .5s;
-  font-size: 1.5vw; }
+  font-size: 1.5vw;
+  z-index: 10; }
   .header:hover {
     top: 0vh; }
 
@@ -616,6 +619,10 @@ fieldset {
   border-style: inset;
   width: 100%;
   border-width: 1px; }
+
+.self {
+  width: 200px;
+  height: 197px; }
 
 .editor {
   margin-top: 1em;
@@ -735,14 +742,11 @@ fieldset {
     box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
 
 .gallery {
-  height: 58.875rem;
   width: var(--container-width);
   background: whitesmoke;
   display: flex;
   flex-flow: wrap row;
-  justify-content: center;
-  align-content: space-between;
-  overflow-y: scroll; }
+  justify-content: center; }
 
 .meme {
   background-color: lightgrey;
@@ -753,6 +757,12 @@ fieldset {
   background-size: cover; }
   .meme:hover {
     cursor: pointer; }
+
+@media (max-width: 780px) {
+  .meme {
+    width: 100vw;
+    height: 100vw;
+    clip-path: none; } }
 
 @media (max-width: 780px) {
   .get-in-touch {
@@ -767,11 +777,6 @@ fieldset {
     .msg-send input,
     .msg-send textarea {
       width: 100%; } }
-
-@media (max-width: 780px) {
-  .meme {
-    width: 100%;
-    height: 100px; } }
 
 .get-in-touch {
   padding: 65px 120px;
@@ -820,7 +825,6 @@ fieldset {
 
 .search {
   padding-top: 1vh;
-  height: 12.5rem;
   width: var(--container-width);
   background: whitesmoke;
   display: flex;
@@ -839,18 +843,20 @@ fieldset {
     background-repeat: no-repeat;
     padding: 12px 20px 12px 5vw;
     transition: width 0.4s ease-in-out;
-    margin-right: 7px; }
+    margin-left: 1em; }
     .search input[type=text]:focus {
-      width: 90%; }
+      width: 80%; }
   .search .submit-button {
     margin-left: 0;
     background-color: #d6d6d6;
-    width: 8%;
+    width: 18%;
     height: 46px;
     border: none;
-    cursor: pointer; }
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .5s; }
     .search .submit-button:hover {
-      background-color: var(--secondary-font); }
+      background-color: var(--font-selected); }
 
 .search-tags {
   width: 70%;
@@ -899,3 +905,8 @@ fieldset {
 
 .search-form {
   width: 100%; }
+
+@media (max-width: 780px) {
+  .search {
+    background-position-x: 20px;
+    padding-left: 10vw; } }

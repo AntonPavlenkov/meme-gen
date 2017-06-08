@@ -18,16 +18,9 @@ body {
   /* Layout */
   --container-width: $container-width;
   --inner-container-width: 820px;
-<<<<<<< HEAD
     @media (max-width: 780px){
    --container-width: 100vw;
  }
-=======
-
-  @media (max-width: 780px) {
-    --container-width: 100vw;
-  }
->>>>>>> 538effd7124156cee59f51c292036aa6ddb407fe
   /* Fonts */
   --primary-font: Lato;
   --secondary-font: Maven;

@@ -1,12 +1,9 @@
 .gallery {
-  height: rem(942px);
   width: var(--container-width);
   background: whitesmoke;
   display: flex;
   flex-flow: wrap row;
   justify-content: center;
-  align-content: space-between;
-  overflow-y: scroll;
 }
 
 .meme {
@@ -27,9 +24,12 @@
 }
 
   @media (max-width: 780px){
+
      .meme{
-      width: 100%;
-      height: 100px;
+      
+      width: 100vw;
+      height: 100vw;
+      clip-path: none;
      }
 
     }
