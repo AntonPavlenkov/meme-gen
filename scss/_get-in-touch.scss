@@ -1,61 +1,63 @@
 .get-in-touch {
+  padding: 65px 120px;
+  display: inline-flex;
+  height: em(564px);
+  width: var(--container-width);
+  background-color: var(--header-color);
+  flex-flow: nowrap column;
+  align-items: flex-start;
+  justify-content: center;
 
-    padding:  65px  120px;
-    display: inline-flex;
-    height: em(564px);
-     width:  var(--container-width) ;
-    background-color: var(--header-color);
+  h1 {
+    font-size: 30PX;
+    margin: 1px 3px 1px 10px;
+    color: #bfbfbf;
+  }
+
+  h2 {
+    font-size: 18PX;
+    margin: 1px 3px 6px 10px;
+    color: #bfbfbf;
+  }
+
+  form {
+    display: flex;
     flex-flow: nowrap column;
-    align-items: flex-start;
-    justify-content:  center;
+  }
 
-
-
-
-   h1 {
-        font-size: 30PX;
-         margin: 1px 3px 1px 10px;
-           color: #bfbfbf;
-    } 
-
-     h2 {
-          font-size: 18PX;
-         margin: 1px 3px 6px 10px;
-         color: #bfbfbf;
-    }
-
-    form {
-        display: flex;
-         flex-flow: nowrap column;
-    }
-
-    
-input , textarea {
-
-     margin: 8px 0;
-     box-sizing: border-box;
+  input,
+  textarea {
+    margin: 8px 0;
+    box-sizing: border-box;
     font-size: 12px;
+    padding-left: 5px;
     background-color: #454545;
     color: white;
-    border: none;
+    border: 2px solid transparent ;
     width: 580px;
     height: 38px;
+  }
 
-
- }
-     
-
-.submit-button {
+  .submit-button {
     margin-top: 10px;
     background-color: var(--font-selected);
     width: 90px;
     align-self: flex-end;
-}
+  }
 
-textarea {
-   height:  150px;
+  textarea {
+    height: 150px;
     overflow-y: scroll;
     resize: none;
+  }
 }
- }
-     
+
+.required {
+  outline :2px solid red;
+}
+
+.msg-send {
+  display: flex;
+  flex-flow: nowrap column;
+  
+}

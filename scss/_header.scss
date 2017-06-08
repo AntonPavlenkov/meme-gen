@@ -31,19 +31,19 @@ a{
     margin: 0 rem(37px);
     align-self: center;
 
-    &:hover{
-        color: var(--font-selected);
+    &:hover {
+      color: var(--font-selected);
     }
+  }
 }
 
-}
-.arrow{
-    margin-top: 10px;
-    display: flex;
-    width: rem(64px);
-    height: rem(55px);
-    background-image: url("../assets/logo.png");
-    background-size: rem(64px);      
+.arrow {
+  margin-top: 10px;
+  display: flex;
+  width: rem(64px);
+  height: rem(55px);
+  background-image: url("../assets/logo.png");
+  background-size: rem(64px);
 }
 
 .thong{

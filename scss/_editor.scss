@@ -9,29 +9,29 @@
     z-index: 5;
 }
 
-.canvas-container{
-    background-color: #F2F2F2;
-    display: flex;
-    flex-flow: nowrap row;
+.canvas-container {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-flow: nowrap row;
 }
 
-#canvas{
-    background: whitesmoke;
-    width: 60%;
-    border-radius: 2px;
-    color: white;
+#canvas {
+  background: whitesmoke;
+  width: 60%;
+  border-radius: 2px;
+  color: white;
 }
 
-.tools-bar{
-    height: 100%;
-    flex-grow: 1;
-    display: flex;
-    flex-flow: wrap column;
-    justify-content: center;
-    align-content: center;
-    padding: 1em;
-    border-radius: 2px;
-    border: solid 1px lightgrey;
+.tools-bar {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: center;
+  align-content: center;
+  padding: 1em;
+  border-radius: 2px;
+  border: solid 1px lightgrey;
 }
 .text-editor{
     border: solid 1px lightgrey;
@@ -56,20 +56,22 @@
     }
 }
 
-.exit, .btn-save, .add-text-box{
-    text-align: center;
-    height: 30px;
-    background: transparent;
-    border: 1px solid lightgray;
-    width: 100%;
-    border-radius: 4px;;
-    margin: 10px 0;
-    transition: all .2s;
-    cursor: pointer;
+.exit,
+.btn-save,
+.add-text-box {
+  text-align: center;
+  height: 30px;
+  background: transparent;
+  border: 1px solid lightgray;
+  width: 100%;
+  border-radius: 4px;
+  margin: 10px 0;
+  transition: all .2s;
+  cursor: pointer;
 
-    &:hover{
-        box-shadow: inset 24px -8px 75px -61px rgba(0,0,0,0.63);
-    }
+  &:hover {
+    box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63);
+  }
 }
 .buttons-style{
     display: flex;
@@ -82,29 +84,29 @@
     border-radius: 5px;
     background-color: transparent;
     cursor: pointer;
+
     i {
-    text-align:center;
-    width: 100%;
-    height: 100%;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:hover {
+      box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63);
+    }
+  }
 }
 
+.btn-save {
+  background-color: #003bb3;
+  border: solid 1px darkblue;
+  line-height: 30px;
+  transition: all .2s;
 
-    &:hover{
-       box-shadow: inset 24px -8px 75px -61px rgba(0,0,0,0.63);
-    }
-    }
-}
-
-.btn-save{
-    background-color: #003bb3;
-    border: solid 1px darkblue;
-    line-height: 30px;
-    transition: all .2s;
-
-    &:hover{
-        background-color: blue;
-         box-shadow: inset 24px -8px 75px -61px rgba(0,0,0,0.63);
-    }
+  &:hover {
+    background-color: blue;
+    box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63);
+  }
 }
 
 

@@ -50,8 +50,6 @@ function renderGallery(imgs) {
 }
 
 
-
-
 function showEditor(param) {
     var elEditor = document.querySelector('.editor');
     elEditor.style.top = param + 'vh';
@@ -63,8 +61,6 @@ function memeClicked(idx) {
 
     gState.selectedImgIdx = idx - 1;
     showEditor(5);
-
-
 }
 
 

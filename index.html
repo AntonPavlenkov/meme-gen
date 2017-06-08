@@ -7,9 +7,6 @@
   <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
   <link rel="stylesheet" href="dist/style.css">
 
-
-
-
 </head>
 
 <body onload="init()">
@@ -35,9 +32,9 @@
           <div class="tools-bar">
             <button class="exit" onclick="showEditor(1200);">exit</button>
             <div class="text-box">
-            <div class="text-editor 0">
-              text1
-              <input type="text" oninput="textOnCanvas(this);">
+              <div class="text-editor 0">
+                text1
+                <input type="text" oninput="textOnCanvas(this);">
                 <span class="buttons-style">
                         <button class="align-right" onclick="alignText('right',this)"><i class="fa fa-align-right"></i></button>
                         <button class="align-center" onclick="alignText('center', this)"><i class="fa fa-align-center"></i></button>
@@ -58,7 +55,7 @@
                           <i class="fa fa-font"></i></button>   
                         <button class="remove-text-editor" onclick="removeTextEditor(this)"><i class="fa fa-trash"></i></button>
                 </span>
-            </div>
+              </div>
             </div>
             <button class="add-text-box" onclick="addTextBox()">Add another text &oplus;</button>
             <button class="btn-save" download="meme.png" onclick="saveMeme();">Save &checkmark;</button>
@@ -71,12 +68,12 @@
     </section>
     <section class="search">
       <div class="search-form"> </div>
-      <form>
-        <input type="text" name="search" placeholder="Search..">
-        <input class="submit-button" type="submit" value="Submit" />
-      </form>
+
+      <input type="text" name="search" id="search" placeholder="Search..">
+      <input class="submit-button" type="submit" value="Submit" onclick="search()" />
+
       <div class="search-tags">
-      
+
       </div>
     </section>
     <section class="gallery">
@@ -152,21 +149,18 @@
       <h2> In order to get in touch use the contact form below:</h2>
 
 
-      <form class="msg-send">
+      <div class="msg-send">
 
-        <span class="required"></span><input type="text" name="field1" class="field-divided" placeholder="Name (Required)"
-        />
+        <input type="text" id="sender-name" name="sender-name" placeholder="Name (Required)" />
 
-        <span class="required"></span>
-        <input type="email" name="field3" class="field-long" placeholder="Email (Required)" />
+        <input type="email" id="sender-email" name="sender-email" placeholder="Email (Required)" />
 
-        <span class="required"></span>
-        <input text="email" name="field3" class="field-long" placeholder="Subject" />
+        <input type="text" id="sender-subject" name="sender-subject" placeholder="Subject" />
 
-        <textarea name="field5" id="field5" class="field-long field-textarea" placeholder="Write your message here..."></textarea>
+        <textarea name="sender-message" id="sender-message" placeholder="Write your message here..."></textarea>
 
-        <input class="submit-button" type="submit" value="Submit" />
-      </form>
+        <input class="submit-button" type="submit" value="Submit" onclick="sendDetails()" />
+      </div>
 
 
     </section>
@@ -174,9 +168,11 @@
   <footer>
 
   </footer>
-      <script src="assets/jscolor-2/jscolor.js"></script>
-      <script src="js/main.js"></script>
-      <script src="js/gallery.js"></script>
+  <script src="js\utils.js"></script>
+  <script src="assets/jscolor-2/jscolor.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/getInTouch.js"></script>
 </body>
 
 </html>

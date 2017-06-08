@@ -1,66 +1,73 @@
-.search{
-    height: rem(100px);
-    width: var(--container-width);
-    background: whitesmoke;
-    display: flex-start;
-    flex-flow: wrap row;
-    justify-content: space-between;
-    align-content: space-between;
+.search {
+  height: rem(150px);
+  width: var(--container-width);
+  background: whitesmoke;
+  display: flex-start;
+  flex-flow: wrap row;
+  justify-content: space-between;
+  align-content: space-between;
 
-
-    input[type=text] {
-    width: 130px;
+  input[type=text] {
+    width: 200px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
     background-image: url('../assets/img/magnifying_glass.png');
-    background-position: 10px 10px; 
+    background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 5vw;
     transition: width 0.4s ease-in-out;
-    margin-right:0;
-    
-}
+    margin-right: 7px;
 
-input[type=text]:focus {
-    width: 90%;
-}
+    &:focus {
+      width: 90%;
+      transition: width 0.4s ease-in-out;
+    }
+  }
 
-.submit-button {
+  .submit-button {
     margin-left: 0;
     background-color: #d6d6d6;
     width: 8%;
     height: 46px;
     border: none;
-    cursor: pointer
-  
+    cursor: pointer;
+  }
+
+  span {
+    &:hover {
+      font-size: 60px;
+      cursor: pointer;
+    }
+  }
 }
 
+.search-tags {
+  text-align: center;
 }
-
 
 .most-popular {
-    font-size: 60px;
+  font-size: 60px;
 }
 
 .very-popular {
-    font-size: 45px;
+  font-size: 45px;
 }
 
 .popular {
-    font-size: 37px
+  font-size: 37px;
 }
 
 .regular {
-    font-size: 30px
+  font-size: 30px;
 }
 
 .not-very-popular {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .least-popular {
-    font-size: 15px;
+  font-size: 15px;
 }
