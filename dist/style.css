@@ -426,6 +426,12 @@ template {
   font-family: 'Lato-Bold';
   src: url("../assets/fonts/Lato/Lato-Bold.ttf"); }
 
+body {
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: center;
+  align-content: center; }
+
 :root {
   /* Layout */
   --container-width: 1020px;
@@ -504,13 +510,14 @@ fieldset {
   justify-content: center;
   align-content: center;
   position: fixed;
-  top: -9vh;
+  top: -9.5vh;
   transition: all .5s;
-  font-size: 2vw; }
+  font-size: 1.5vw; }
   .header:hover {
     top: 0vh; }
 
 .nav {
+  height: 10vh;
   background-color: var(--header-color);
   font-family: Lato-Bold;
   color: #ffffff;
@@ -520,14 +527,17 @@ fieldset {
   justify-content: center;
   align-content: center;
   font-size: 0.4375em; }
+  @media (max-width: 780px) {
+    .nav {
+      font-size: 0.875em; } }
   .nav a {
-    margin: 0 2.3125rem;
+    margin: 0 2.3125em;
     align-self: center; }
     .nav a:hover {
       color: var(--font-selected); }
 
 .arrow {
-  margin-top: 10px;
+  align-self: center;
   display: flex;
   width: 4rem;
   height: 3.4375rem;
@@ -535,12 +545,12 @@ fieldset {
   background-size: 4rem; }
 
 .thong {
-  margin-top: 23px;
+  margin-top: .8vw;
   align-self: center;
   position: fixed;
   background-color: #292929;
-  width: 64px;
-  height: 65px;
+  width: 13vh;
+  height: 13vh;
   transform: rotate(-45deg);
   z-index: -9; }
 
@@ -601,26 +611,49 @@ fieldset {
   margin-top: 1em;
   width: var(--container-width);
   height: 56.25rem;
-  background: #f2f2f2;
+  background: #F2F2F2;
   position: fixed;
   top: 100vh;
   transition: all .5s;
-  z-index: 5; }
+  z-index: 5;
+  height: 120vh; }
+
+.editor-container {
+  display: flex;
+  flex-flow: nowrap row;
+  overflow-y: scroll; }
+
+@media (max-width: 780px) {
+  .editor {
+    height: 100%;
+    height: 500vh; }
+    .editor .canvas-container {
+      justify-content: center;
+      width: 100vw; }
+      .editor .canvas-container #canvas {
+        width: 100vw !important;
+        height: 70vh !important; }
+  .editor-container {
+    flex-flow: nowrap column; }
+    .editor-container .tools-bar {
+      display: block;
+      height: 30vh;
+      width: 100%; } }
 
 .canvas-container {
+  width: 50vw;
   background-color: #f2f2f2;
   display: flex;
   flex-flow: nowrap row; }
 
 #canvas {
   background: whitesmoke;
-  width: 60%;
   border-radius: 2px;
   color: white; }
 
 .tools-bar {
+  width: 50%;
   height: 100%;
-  flex-grow: 1;
   display: flex;
   flex-flow: wrap column;
   justify-content: center;
@@ -707,6 +740,11 @@ fieldset {
   margin: 20px;
   background-size: cover; }
 
+@media (max-width: 780px) {
+  .meme {
+    width: 100%;
+    height: 100px; } }
+
 .get-in-touch {
   padding: 65px 120px;
   display: inline-flex;
@@ -764,11 +802,7 @@ fieldset {
   justify-content: space-between;
   align-content: space-between; }
   .search input[type=text] {
-<<<<<<< HEAD
-    width: 130px;
-=======
     width: 200px;
->>>>>>> 82c892be93252024cc3d46a67335e6d1be3ad04e
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -781,8 +815,7 @@ fieldset {
     transition: width 0.4s ease-in-out;
     margin-right: 7px; }
     .search input[type=text]:focus {
-      width: 90%;
-      transition: width 0.4s ease-in-out; }
+      width: 90%; }
   .search .submit-button {
     margin-left: 0;
     background-color: #d6d6d6;

@@ -60,7 +60,7 @@ function showEditor(param) {
 function memeClicked(idx) {
 
     gState.selectedImgIdx = idx - 1;
-    showEditor(5);
+    showEditor(-3);
 }
 
 
