@@ -537,7 +537,7 @@ fieldset {
   padding: 0 50px;
   display: inline-flex;
   height: 21.3125em;
-  max-width: calc( var(--container-width) /2);
+  max-width: calc(var(--container-width) /2);
   background-color: var(--font-selected);
   flex-flow: nowrap row;
   align-items: center;
@@ -589,14 +589,14 @@ fieldset {
 .editor {
   width: var(--container-width);
   height: 56.25rem;
-  background: #F2F2F2;
+  background: #f2f2f2;
   position: fixed;
   top: 100vw;
   transition: all .5s;
   z-index: 5; }
 
 .canvas-container {
-  background-color: #F2F2F2;
+  background-color: #f2f2f2;
   display: flex;
   flex-flow: nowrap row; }
 
@@ -632,7 +632,9 @@ fieldset {
   .text-editor input {
     border-radius: 2px; }
 
-.exit, .btn-save, .add-text-box {
+.exit,
+.btn-save,
+.add-text-box {
   text-align: center;
   height: 30px;
   background: transparent;
@@ -642,7 +644,9 @@ fieldset {
   margin: 10px 0;
   transition: all .2s;
   cursor: pointer; }
-  .exit:hover, .btn-save:hover, .add-text-box:hover {
+  .exit:hover,
+  .btn-save:hover,
+  .add-text-box:hover {
     box-shadow: inset 24px -8px 75px -61px rgba(0, 0, 0, 0.63); }
 
 .buttons-style {
@@ -689,7 +693,7 @@ fieldset {
   background-size: cover; }
 
 .get-in-touch {
-  padding: 65px  120px;
+  padding: 65px 120px;
   display: inline-flex;
   height: 35.25em;
   width: var(--container-width);
@@ -708,13 +712,15 @@ fieldset {
   .get-in-touch form {
     display: flex;
     flex-flow: nowrap column; }
-  .get-in-touch input, .get-in-touch textarea {
+  .get-in-touch input,
+  .get-in-touch textarea {
     margin: 8px 0;
     box-sizing: border-box;
     font-size: 12px;
+    padding-left: 5px;
     background-color: #454545;
     color: white;
-    border: none;
+    border: 2px solid transparent;
     width: 580px;
     height: 38px; }
   .get-in-touch .submit-button {
@@ -727,8 +733,15 @@ fieldset {
     overflow-y: scroll;
     resize: none; }
 
+.required {
+  outline: 2px solid red; }
+
+.msg-send {
+  display: flex;
+  flex-flow: nowrap column; }
+
 .search {
-  height: 6.25rem;
+  height: 9.375rem;
   width: var(--container-width);
   background: whitesmoke;
   display: flex-start;
@@ -736,8 +749,7 @@ fieldset {
   justify-content: space-between;
   align-content: space-between; }
   .search input[type=text] {
-    width: 130px;
-    text-align: 2px;
+    width: 200px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -746,11 +758,12 @@ fieldset {
     background-image: url("../assets/img/magnifying_glass.png");
     background-position: 10px 10px;
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 12px 20px 12px 5vw;
     transition: width 0.4s ease-in-out;
-    margin-right: 0; }
-  .search input[type=text]:focus {
-    width: 90%; }
+    margin-right: 7px; }
+    .search input[type=text]:focus {
+      width: 90%;
+      transition: width 0.4s ease-in-out; }
   .search .submit-button {
     margin-left: 0;
     background-color: #d6d6d6;
@@ -758,6 +771,12 @@ fieldset {
     height: 46px;
     border: none;
     cursor: pointer; }
+  .search span:hover {
+    font-size: 60px;
+    cursor: pointer; }
+
+.search-tags {
+  text-align: center; }
 
 .most-popular {
   font-size: 60px; }

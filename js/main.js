@@ -5,15 +5,15 @@ var gImgs = [
     { id: 3, url: 'assets/img/3.jpg', keyWords: ['nerd', 'man', 'child', 'smart', 'happy'] },
     { id: 4, url: 'assets/img/4.jpg', keyWords: ['baby', 'sucsuess', 'established', 'complete', 'happy'] },
     { id: 5, url: 'assets/img/5.jpg', keyWords: ['happy'] },
-    { id: 6, url: 'assets/img/6.jpg', keyWords: ['happy', 'smooking', 'grass', 'man'] }, 
+    { id: 6, url: 'assets/img/6.jpg', keyWords: ['happy', 'smooking', 'grass', 'man'] },
     { id: 7, url: 'assets/img/7.jpg', keyWords: ['happy', 'laugh', 'sarcastic'] },
     { id: 8, url: 'assets/img/8.jpg', keyWords: ['happy', 'shocked', 'suprised', 'girl', 'amazed'] },
-    { id: 9, url: 'assets/img/9.jpg', keyWords: ['happy',  'cat', 'satisfied', 'sucsuess'] },
+    { id: 9, url: 'assets/img/9.jpg', keyWords: ['happy', 'cat', 'satisfied', 'sucsuess'] },
     { id: 10, url: 'assets/img/10.jpg', keyWords: ['why', 'sad', 'unsatisfied', 'wonder'] },
     { id: 11, url: 'assets/img/11.jpg', keyWords: ['sucsuess', 'man', 'victory', 'hesitates'] },
     { id: 12, url: 'assets/img/12.jpg', keyWords: ['wonder', 'ask', 'asking', 'hesitates'] },
     { id: 13, url: 'assets/img/13.jpg', keyWords: ['angery', 'mad'] },
-    { id: 14, url: 'assets/img/14.jpg', keyWords: ['Pokemon', 'happy','pink'] },
+    { id: 14, url: 'assets/img/14.jpg', keyWords: ['Pokemon', 'happy', 'pink'] },
     { id: 15, url: 'assets/img/15.jpg', keyWords: ['cat', 'grumpy', 'sad'] }
 ];
 
@@ -49,8 +49,6 @@ function renderGallery(imgs) {
 }
 
 
-
-
 function showEditor(param) {
     var elEditor = document.querySelector('.editor');
     elEditor.style.top = param + 'vw';
@@ -61,8 +59,6 @@ function showEditor(param) {
 function memeClicked(idx) {
     gState.selectedImgIdx = idx;
     showEditor(5);
-
-
 }
 
 
@@ -74,19 +70,19 @@ function textOnCanvas(element) {
 }
 
 
-function renderCanvas(){
- var elCanvas = document.querySelector('#canvas');
+function renderCanvas() {
+    var elCanvas = document.querySelector('#canvas');
     var context = elCanvas.getContext('2d');
     var imageObj = new Image();
     imageObj.onload = function () {
         context.drawImage(imageObj, 0, 0, elCanvas.width, elCanvas.height);
-        for (var i = 0; i < gState.txts.length; i++) {     
-        context.textAlign = gState.txts[i].align;
-        context.fillStyle = gState.txts[i].color;
-        context.font = gState.txts[i].size + 'px ' + gState.txts[i].font;
-        context.fillText(gState.txts[i].text, 20, 20+i*50);
-    };
-        }
+        for (var i = 0; i < gState.txts.length; i++) {
+            context.textAlign = gState.txts[i].align;
+            context.fillStyle = gState.txts[i].color;
+            context.font = gState.txts[i].size + 'px ' + gState.txts[i].font;
+            context.fillText(gState.txts[i].text, 20, 20 + i * 50);
+        };
+    }
     imageObj.src = gImgs[gState.selectedImgIdx].url;
 }
 
@@ -104,18 +100,18 @@ function saveMeme() {
 
 function addTextBox() {
     var newText = {
-            text: '',
-            size: 20,
-            align: 'left',
-            color: 'white',
-            font: 'Arial'
-        }
+        text: '',
+        size: 20,
+        align: 'left',
+        color: 'white',
+        font: 'Arial'
+    }
     gState.txts.push(newText);
     var strHtml;
     var elTextArea = document.querySelector('.text-box');
-    
+
     strHtml = `
-    <div class="text-editor ${gState.txts.length-1}">
+    <div class="text-editor ${gState.txts.length - 1}">
               text${gState.txts.length}
               <input type="text" oninput="textOnCanvas(this);">
                <span class="buttons-style">
@@ -124,7 +120,7 @@ function addTextBox() {
                         <button class="align-left" onclick="alignText('left' ,this)"><i class="fa fa-align-left"></i></button>
                         <button class="size-" onclick="changeSize('false', this)"><i class="fa fa-minus"></i></button>
                         <button class="size+" onclick="changeSize('true', this)"><i class="fa fa-plus"></i></button><script>jscolor.init();</script>
-                        <button class="color-picker${gState.txts.length-1} jscolor {valueElement:null,value:'6${gState.txts.length-1}ccff'}" onclick="updateColor(this)"><i class="fa fa-paint-brush"></i></button>
+                        <button class="color-picker${gState.txts.length - 1} jscolor {valueElement:null,value:'6${gState.txts.length - 1}ccff'}" onclick="updateColor(this)"><i class="fa fa-paint-brush"></i></button>
                         <button class="font-border" onclick="addBorder()" ><i class="fa fa-bold"></i></button>
                         <button class="font" onclick="changeFont()"><i class="fa fa-font"></i></button>
                         <button class="remove-text-editor" onclick="removeTextEditor(this)"><i class="fa fa-trash"></i></button>
@@ -132,7 +128,7 @@ function addTextBox() {
             </div>`
     elTextArea.innerHTML += strHtml;
     jscolor.init();
-    
+
 }
 
 function alignText(direction, element) {
@@ -151,19 +147,19 @@ function changeSize(direction, element) {
         gState.txts[element].size++;
     } else
         gState.txts[element].size--;
-        renderCanvas();
+    renderCanvas();
 }
 
-function removeTextEditor(element){
+function removeTextEditor(element) {
     element = element.parentElement;
     element = element.parentElement;
     gState.txts[element.classList[1]].text = '';
     element.remove();
     renderCanvas();
-    
+
 }
 
-function  updateColor(element){
+function updateColor(element) {
     var color = element;
     element = element.parentElement;
     element = element.parentElement.classList;
