@@ -33,8 +33,8 @@ var gState = {
 }
 function init()  {
   renderGallery(gImgs);
-    // if (loadFromStorage('keyCount') !== null || loadFromStorage('keyCount') !== undefined)
-    //     gKeysCount = loadFromStorage('keyCount');
+    if (!loadFromStorage('keyCount'))
+        gKeysCount = loadFromStorage('keyCount');
     renderKeys();
 
 
@@ -185,24 +185,19 @@ function addTextBox() {
 }
 
 function alignText(direction, element) {
-    element = element.parentElement;
-    element = element.parentElement.classList;
-    element = element[1];
+    element = getParentElement(2, element).classList[1];
     gState.txts[element].align = direction;
     renderCanvas();
 }
 
 function changeSize(direction, element) {
-    element = element.parentElement;
-    element = element.parentElement.classList;
-    element = element[1];
+    element = getParentElement(2, element).classList[1];
     (direction === 'true') ? gState.txts[element].size++ : gState.txts[element].size--;
     renderCanvas();
 }
 
 function removeTextEditor(element) {
-    element = element.parentElement;
-    element = element.parentElement;
+    element = getParentElement(2, element);
     gState.txts[element.classList[1]].text = '';
     element.remove();
     renderCanvas();
@@ -212,17 +207,13 @@ function removeTextEditor(element) {
 function updateColor(element) {
     var picker = new jscolor(element);
     var color = element;
-    element = element.parentElement;
-    element = element.parentElement.classList;
-    element = element[1];
+    element = getParentElement(2, element).classList[1];
     gState.txts[element].color = color.style.backgroundColor;
     renderCanvas();
 }
 
 function addBorder(element) {
-    element = element.parentElement;
-    element = element.parentElement.classList;
-    element = element[1];
+    element = getParentElement(2, element).classList[1];
     (gState.txts[element].textDecor) ? gState.txts[element].textDecor = '' : gState.txts[element].textDecor = 'bold ';
     renderCanvas();
 }
@@ -235,9 +226,14 @@ function changeFont(element) {
 function updateh1family(element) {
     element.style.display = 'none';
     var family = element.options[element.selectedIndex].value;
-    element = element.parentElement;
-    element = element.parentElement;
-    element = element.parentElement.classList;
+    element = getParentElement(3, element).classList;
     gState.txts[element[1]].font = family;
     renderCanvas();
+}
+
+function getParentElement(parentNum,element){
+    for (var i = 0; i < parentNum; i++) {
+        element = element.parentElement;
+    }
+    return element;
 }

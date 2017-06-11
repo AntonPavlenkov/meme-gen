@@ -1,19 +1,19 @@
-function search() {
-    var elGallery = document.querySelector('.gallery');
-    var inputSearch = document.getElementById("search");
-    var key = inputSearch.value;
-    countKeysSearch(key);
-    renderKeys();
-    var filteredImgs = filterByKeyWord(key);
-    if (filteredImgs.length === 0) {
-        elGallery.innerHTML = "Soory, not matching results"
-    }
-    else {
-        renderGallery(filteredImgs);
+// function search() {
+//     var elGallery = document.querySelector('.gallery');
+//     var inputSearch = document.getElementById("search");
+//     var key = inputSearch.value;
+//     countKeysSearch(key);
+//     renderKeys();
+//     var filteredImgs = filterByKeyWord(key);
+//     if (filteredImgs.length === 0) {
+//         elGallery.innerHTML = "Soory, not matching results"
+//     }
+//     else {
+//         renderGallery(filteredImgs);
 
-    }
-    inputSearch.value = "";
-}
+//     }
+//     inputSearch.value = "";
+// }
 
 
 function sendDetails() {
