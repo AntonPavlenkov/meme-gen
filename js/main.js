@@ -33,8 +33,8 @@ var gState = {
 }
 function init()  {
   renderGallery(gImgs);
-    if (!loadFromStorage('keyCount'))
-        gKeysCount = loadFromStorage('keyCount');
+    // if (!loadFromStorage('keyCount'))
+    //     gKeysCount = loadFromStorage('keyCount'); ----> not rendering
     renderKeys();
 
 
